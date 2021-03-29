@@ -1,0 +1,193 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19041.867; Version 2004; 64bit' Language: 'ru' Physical Memory: 16340 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/GameDev/Projects/Prototypes/SpaceShooter
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56975
+Successfully changed project path to: C:/GameDev/Projects/Prototypes/SpaceShooter
+C:/GameDev/Projects/Prototypes/SpaceShooter
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 22.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/GameDev/Projects/Prototypes/SpaceShooter/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 950 (ID=0x1402)
+    Vendor:   
+    VRAM:     2007 MB
+    Driver:   27.21.14.5671
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56068
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002223 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 21.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.056 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000653 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.837 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1138 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.7 MB.
+System memory in use after: 57.8 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1583.
+Total: 1.644800 ms (FindLiveObjects: 0.128800 ms CreateObjectMapping: 0.044000 ms MarkObjects: 1.406400 ms  DeleteObjects: 0.064300 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/ProjectileHero.prefab
+  artifactKey: Guid(c506a330943d85145bd28496d47ddfcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ProjectileHero.prefab using Guid(c506a330943d85145bd28496d47ddfcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4cafeb4de7ab9ebca7652846651d4c7') in 0.114509 seconds
+  Import took 0.116297 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Prefabs/Enemy_2.prefab
+  artifactKey: Guid(51a4af612f8e7864dab5e57558eaa37e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy_2.prefab using Guid(51a4af612f8e7864dab5e57558eaa37e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b561a254ddb27bc54e60c2e5137c0977') in 0.223318 seconds
+  Import took 0.224989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Prefabs/_Hero.prefab
+  artifactKey: Guid(a5b20f1d9604de5489a4679ba391a171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/_Hero.prefab using Guid(a5b20f1d9604de5489a4679ba391a171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec0eb0f16133fbe1309927ddf083ba4f') in 0.023448 seconds
+  Import took 0.025450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Prefabs/Weapon.prefab
+  artifactKey: Guid(d8ea53ee026eae443a25ab026478c5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Weapon.prefab using Guid(d8ea53ee026eae443a25ab026478c5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67ef7d05c2fcac827a4ee60771f895a0') in 0.015868 seconds
+  Import took 0.017514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Prefabs/PowerUp.prefab
+  artifactKey: Guid(efe18d929db65964fa35b92e2b6fab2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/PowerUp.prefab using Guid(efe18d929db65964fa35b92e2b6fab2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68faa1406882b098f8f9fcd5e64184e9') in 0.016404 seconds
+  Import took 0.018670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Prefabs/StarfieldBG_1.prefab
+  artifactKey: Guid(1f594ca8cd68483469907b2bd340c8c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/StarfieldBG_1.prefab using Guid(1f594ca8cd68483469907b2bd340c8c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '096d55fcab675043bbe766ae5e7197f2') in 0.016178 seconds
+  Import took 0.018056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Prefabs/Enemy_4.prefab
+  artifactKey: Guid(f6af31936f26f4c4bbdb95587f920a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy_4.prefab using Guid(f6af31936f26f4c4bbdb95587f920a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c406eabbb80db53cd332a13d763428e') in 0.017523 seconds
+  Import took 0.019260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Prefabs/Enemy_3.prefab
+  artifactKey: Guid(5ad369b83b367864ca05c1df45828945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy_3.prefab using Guid(5ad369b83b367864ca05c1df45828945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f7d49cc38e02b57ac70d348c16cc041') in 0.017073 seconds
+  Import took 0.018741 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Prefabs/Explosion.prefab
+  artifactKey: Guid(491e3c2853f103749ae42fddce1fcc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Explosion.prefab using Guid(491e3c2853f103749ae42fddce1fcc0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dcbf1f6e38ed76cb31e3d1cf7754bd9') in 0.015095 seconds
+  Import took 0.016708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Prefabs/Enemy_1.prefab
+  artifactKey: Guid(48f05e14983f91b4c8095afd2c019469) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy_1.prefab using Guid(48f05e14983f91b4c8095afd2c019469) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a55139f970896eeb37b7f7fc57fc0eb8') in 0.015489 seconds
+  Import took 0.017212 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Prefabs/StarfieldBG_0.prefab
+  artifactKey: Guid(4e0a9c0e22031954eba9208be0653a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/StarfieldBG_0.prefab using Guid(4e0a9c0e22031954eba9208be0653a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da9cafa4362a0c64aac0658967326eef') in 0.015262 seconds
+  Import took 0.016991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Prefabs/Enemy_0.prefab
+  artifactKey: Guid(dcc40b3ee055f7f41981c952a4944f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy_0.prefab using Guid(dcc40b3ee055f7f41981c952a4944f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eacb646027a3c25c8fb555a53e8519d') in 0.016567 seconds
+  Import took 0.018253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.483206 seconds.
+  path: Assets/Scripts/ExplosionFX.cs
+  artifactKey: Guid(84a3f39ebae839f439f6263eef4853bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ExplosionFX.cs using Guid(84a3f39ebae839f439f6263eef4853bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f574e04076b5dcde0d4a989d43ccfe9') in 0.015820 seconds
+  Import took 0.017481 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 39.0 MB.
+System memory in use after: 39.1 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1593.
+Total: 1.767800 ms (FindLiveObjects: 0.193500 ms CreateObjectMapping: 0.042200 ms MarkObjects: 1.484700 ms  DeleteObjects: 0.046200 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
