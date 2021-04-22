@@ -68,7 +68,7 @@ public class BoundsCheck : MonoBehaviour
     //Рисует границы в панели Scene 
     void OnDrawGizmos()
     {
-        if (!Application.isPlaying) return;
+        //if (!Application.isPlaying) return;
         Vector3 boundSize = new Vector3(camWidth * 2, camHeights * 2, 0.1f);
         Gizmos.DrawWireCube(Vector3.zero, boundSize);
     }
