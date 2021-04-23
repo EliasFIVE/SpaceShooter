@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Use on Text object to set blinkin text
+/// Interpolate between two colors set in inspector
+/// </summary>
 public class TextBlink : MonoBehaviour
 {
     [Header("Set In Inspector")]
@@ -12,7 +16,7 @@ public class TextBlink : MonoBehaviour
 
     private Text text;
     private float u = 0;
-    // Start is called before the first frame update
+
     void Start()
     {
         text = GetComponent<Text>();
