@@ -20,11 +20,11 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int currentLevel = Mathf.FloorToInt(Hero.S.shieldLevel);
+/*        int currentLevel = Mathf.FloorToInt(Hero.S.shieldLevel);
         if (levelShown != currentLevel)
         {
             levelShown = currentLevel;
-        }
+        }*/
         mat.mainTextureOffset = new Vector2(0.2f * levelShown, 0);
 
         float rZ = -(rotationPerSecond * Time.time * 360) % 360f;

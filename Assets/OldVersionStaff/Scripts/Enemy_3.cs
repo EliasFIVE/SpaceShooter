@@ -16,19 +16,19 @@ public class Enemy_3 : Enemy
         points = new Vector3[3];
         points[0] = pos; // Начальная позиция определена в Main.SpawnEnemy()
 
-        float xMin = -bndCheck.camWidth + bndCheck.radius;
-        float xMax = bndCheck.camWidth - bndCheck.radius;
+        //float xMin = -bndCheck.camWidth + bndCheck.radius;
+        //float xMax = bndCheck.camWidth - bndCheck.radius;
         Vector3 v;
         //Случайно выбрать среднюю точку нижней границы экрана
         v = Vector3.zero;
-        v.x = Random.Range(xMin, xMax);
-        v.y = -bndCheck.camHeights * Random.Range(2.75f, 2);
+        //v.x = Random.Range(xMin, xMax);
+        //v.y = -bndCheck.camHeights * Random.Range(2.75f, 2);
         points[1] = v;
 
         //Случайно выбрать конечную точку выше верхней границы экрана
         v = Vector3.zero;
         v.y = pos.y;
-        v.x = Random.Range(xMin, xMax);
+        //v.x = Random.Range(xMin, xMax);
         points[2] = v;
 
         birthTime = Time.time;

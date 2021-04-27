@@ -50,10 +50,10 @@ public class Enemy_4 : Enemy
     void InitMovement()
     {
         p0 = p1;
-        float widMinRad = bndCheck.camWidth - bndCheck.radius;
-        float hgtMinRad = bndCheck.camHeights - bndCheck.radius;
-        p1.x = Random.Range(-widMinRad, widMinRad);
-        p1.y = Random.Range(-hgtMinRad, hgtMinRad);
+        //float widMinRad = bndCheck.camWidth - bndCheck.radius;
+        //float hgtMinRad = bndCheck.camHeights - bndCheck.radius;
+        //p1.x = Random.Range(-widMinRad, widMinRad);
+        //p1.y = Random.Range(-hgtMinRad, hgtMinRad);
 
         // Сбросить время
         timeStart = Time.time;
@@ -133,7 +133,7 @@ public class Enemy_4 : Enemy
             case "ProjectileHero":
                 
                 Projectile p = other.GetComponent<Projectile>();
-                if (!bndCheck.isOnScreen)
+                if (!bndCheck.IsOnScreen)
                 {
                     Destroy(other);
                     break;

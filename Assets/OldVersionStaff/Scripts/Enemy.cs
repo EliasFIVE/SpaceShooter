@@ -80,7 +80,7 @@ public class Enemy : MonoBehaviour
             case "ProjectileHero":
                 Projectile p = otherGO.GetComponent<Projectile>();
                 //Если вражеский корабль за границей экрана - не наносить ему повреждений
-                if (!bndCheck.isOnScreen)
+                if (!bndCheck.IsOnScreen)
                 {
                     Destroy(otherGO);
                     break;

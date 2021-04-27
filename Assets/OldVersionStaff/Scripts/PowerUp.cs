@@ -67,7 +67,7 @@ public class PowerUp : MonoBehaviour
             letter.color = c;
         }
 
-        if (!bndCheck.isOnScreen)
+        if (!bndCheck.IsOnScreen)
         {
             Destroy(gameObject);
         }

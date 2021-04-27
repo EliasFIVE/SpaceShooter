@@ -20,14 +20,14 @@ public class Enemy_2 : Enemy
     void Start()
     {
         //Случайная точка на левой границе экрана
-        p0 = Vector3.zero;
+/*        p0 = Vector3.zero;
         p0.x = -bndCheck.camWidth - bndCheck.radius;
         p0.y = Random.Range(-bndCheck.camHeights, bndCheck.camHeights);
 
         //Случайная точка на правой границе экрана
         p1 = Vector3.zero;
         p1.x = bndCheck.camWidth + bndCheck.radius;
-        p1.y = Random.Range(-bndCheck.camHeights, bndCheck.camHeights);
+        p1.y = Random.Range(-bndCheck.camHeights, bndCheck.camHeights);*/
 
         //Случайно поменять начальную и конечную точку сторонами экрана
         if (Random.value > 0.5f)

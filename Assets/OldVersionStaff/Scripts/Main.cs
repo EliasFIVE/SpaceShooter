@@ -7,6 +7,7 @@ public class Main : MonoBehaviour
 {
     static public Main S;
     static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT;
+
     public static int enemyKilled = 0;
     public static int projectilesLunched = 0;
     public static int enemyHit = 0;
@@ -64,10 +65,10 @@ public class Main : MonoBehaviour
         }
 
         Vector3 pos = Vector3.zero;
-        float xMin = -bndCheck.camWidth + enemyPadding;
-        float xMax = bndCheck.camWidth - enemyPadding;
-        pos.x = Random.Range(xMin, xMax);
-        pos.y = bndCheck.camHeights + enemyPadding;
+        //float xMin = -bndCheck.camWidth + enemyPadding;
+        //float xMax = bndCheck.camWidth - enemyPadding;
+        //pos.x = Random.Range(xMin, xMax);
+        //pos.y = bndCheck.camHeights + enemyPadding;
         go.transform.position = pos;
 
         Invoke("SpawnEnemy", 1f / enemySpawnPerSecond);
@@ -102,11 +103,11 @@ public class Main : MonoBehaviour
         return (new WeaponDefinition());
     }
 
-    public void FixedUpdate()
+/*    public void FixedUpdate()
     {
         if (projectilesLunched != 0)
         {
             accuracy = (float)enemyHit / (float)projectilesLunched;
         }
-    }
+    }*/
 }

@@ -40,6 +40,7 @@ public class Hero : MonoBehaviour
         {
             Debug.LogError("Hero.Awake() - Attempted to assing second Hero.S !");
         }
+
         ClearWeapons();
         weapons[0].SetType(WeaponType.blaster);
         
@@ -49,7 +50,7 @@ public class Hero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xAxis = Input.GetAxis("Horizontal");
+/*        float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
 
         Vector3 pos = transform.position;
@@ -57,7 +58,7 @@ public class Hero : MonoBehaviour
         pos.y += yAxis * speed * Time.deltaTime;
         transform.position = pos;
 
-        transform.rotation = Quaternion.Euler(yAxis * pitchMult, xAxis * rollMult, 0);
+        transform.rotation = Quaternion.Euler(yAxis * pitchMult, xAxis * rollMult, 0);*/
 
         WeaponOverheatChek();
         
@@ -131,10 +132,10 @@ public class Hero : MonoBehaviour
             if (value < 0)              
             {
                 Die(this.gameObject);
-
             }
         }
     }
+
     void Die(GameObject target)
     {
         GameObject go = Instantiate<GameObject>(explosionPrefab);

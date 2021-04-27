@@ -18,7 +18,7 @@ public class UI_WeaponType : MonoBehaviour
     {
         if (Hero.S != null)
         {
-            text.color = Hero.S.weapons[0].collar.GetComponent<Renderer>().material.color;
+            //text.color = Hero.S.weapons[0].collar.GetComponent<Renderer>().material.color;
             text.text = Hero.S.weapons[0].type.ToString();
         }
 

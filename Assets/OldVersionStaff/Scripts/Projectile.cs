@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (bndCheck.offUp)
+        if (!bndCheck.IsOnScreen)
         {
             Destroy(gameObject);
         }

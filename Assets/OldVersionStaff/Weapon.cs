@@ -2,37 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WeaponType
-{
-    none,
-    blaster, //default
-    spread, //Shotgun
-    phaser,  //machinegun
-    missile,
-    laser,
-    mine,
-    shield
-}
-
-/// <summary>
-/// Класс WeaponDefinition позволяет настраивать свойства конкретного вида оружия в инспекторе.
-/// </summary>
-[System.Serializable]
-public class WeaponDefinition
-{
-    public WeaponType type = WeaponType.none;
-    public string letter;                   //Буква на кубике, изображающем бонус
-    public Color color = Color.white;       //Цвет ствола оружия
-    public GameObject projectilePrefab;     //Шаблон снарядов
-    public Color projectileColor = Color.white;
-    public float damageOnHit = 0;
-    public float continuousDamage = 0;
-    public float delayBetweenShots = 0;
-    public float velocity = 20;             //Скорость полета снарядов
-    public float projectileLifeTime = 10f;
-    public float projectileEnergyCost = 1f;
-    public AudioClip shootFX;
-}
 
 public class Weapon: MonoBehaviour
 {
@@ -42,19 +11,21 @@ public class Weapon: MonoBehaviour
     public float shootDelayTime = 0;
 
     [Header("Set Dynamically")]
-    [SerializeField]
-    private WeaponType _type = WeaponType.none;
-    public WeaponDefinition def;
-    public GameObject collar;
+    [SerializeField] private WeaponType _type = WeaponType.none;
+    public WeaponDefinition weaponDefinition;
+
+    private GameObject collar; //Dummy object to show visual identification of current set weapon and to set initial projectile position
     private Renderer collarRend;
+
     private AudioSource audio;
     private AudioClip shootFX;
 
     private float lastShotTime; //Время последнего выстрела
     private void Start()
     {
-        collar = transform.Find("Collar").gameObject;
+        collar = transform.Find("Collar").gameObject; //Not best descision: to find object by string name. Need to think of alt way. But don't want to set it manualy in inspector
         collarRend = collar.GetComponent<Renderer>();
+        
         audio = GetComponent<AudioSource>();
         //Вызвать SetType(), чтобы заменить тип оружия по умолчанию
         //WeaponType.none
@@ -90,9 +61,9 @@ public class Weapon: MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }
-        def = Main.GetWeaponDefinition(_type);
-        collarRend.material.color = def.color;
-        shootFX = def.shootFX;
+        weaponDefinition = Main.GetWeaponDefinition(_type);
+        collarRend.material.color = weaponDefinition.color;
+        shootFX = weaponDefinition.shootFX;
         lastShotTime = 0;
     }
     
@@ -101,12 +72,14 @@ public class Weapon: MonoBehaviour
         Invoke("Fire", shootDelayTime);
     }
 
+
+    ///Transfer to weapon definition SO???
     public void Fire()
     {
         if (!gameObject.activeInHierarchy) return;
-        if (Time.time - lastShotTime < def.delayBetweenShots) return;
+        if (Time.time - lastShotTime < weaponDefinition.delayBetweenShots) return;
         Projectile p;
-        Vector3 vel = Vector3.up * def.velocity;
+        Vector3 vel = Vector3.up * weaponDefinition.velocity;
         if (transform.up.y < 0) vel.y = -vel.y;
 
         audio.PlayOneShot(shootFX, 0.5F);
@@ -140,7 +113,7 @@ public class Weapon: MonoBehaviour
 
     public Projectile MakeProjectile()
     {
-        GameObject go = Instantiate<GameObject>(def.projectilePrefab);
+        GameObject go = Instantiate<GameObject>(weaponDefinition.projectilePrefab);
         if(transform.parent.gameObject.tag == "Hero")
         {
             go.tag = "ProjectileHero";
@@ -156,8 +129,10 @@ public class Weapon: MonoBehaviour
         p.type = type;
         lastShotTime = Time.time;
 
-        Main.projectilesLunched++;
-        Hero.S.energy -= Main.GetWeaponDefinition(p.type).projectileEnergyCost;
+        Main.projectilesLunched++; //call For global stats
+
+
+        Hero.S.energy -= Main.GetWeaponDefinition(p.type).projectileEnergyCost; // call For player stats
 
 
         return (p);
