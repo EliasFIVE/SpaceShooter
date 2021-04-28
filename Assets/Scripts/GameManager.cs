@@ -36,6 +36,7 @@ public class GameManager : Manager<GameManager>
 
     public Events.EventGameState OnGameStateChanged;
 
+
     /*private PlayerController playerController;
     private PlayerController PLayer
     {
@@ -55,8 +56,6 @@ public class GameManager : Manager<GameManager>
     {
         _instancedSystemPrefabs = new List<GameObject>();
         InstantiateSystemPrefabs();
-
-        //UIManager.Instance.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
     }
 
     /// <summary>

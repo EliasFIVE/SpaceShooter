@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9048206720efa7f42b28512a44dc9192, type: 3}
+  m_Name: ItemBlaster
+  m_EditorClassIdentifier: 
+  type: 2
+  letter: 
+  color: {r: 0, g: 1, b: 0.97059774, a: 1}
+  weaponType: 1
+  projectilePrefab: {fileID: 3651440073324300692, guid: d0f8f80aa78e4564998f8463f69db0bb,
+    type: 3}
+  projectileColor: {r: 0, g: 1, b: 0.9725491, a: 1}
+  delayBetweenShots: 0.5
+  projectileVelocity: 40
+  damageOnHit: 1
+  projectileLifeTime: 1
+  projectileEnergyCost: 1
