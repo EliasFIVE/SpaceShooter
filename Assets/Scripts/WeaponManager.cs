@@ -6,8 +6,6 @@ using UnityEngine;
 //Move all to Spawn Manager
 public class WeaponManager : Manager<WeaponManager>
 {
-
-    //Transfer to sepparate manager (weapon manager or pickup items manager)
     public Weapon_SO[] weaponDefinitions; //list of all weapon types
     static Dictionary<WeaponType, Weapon_SO> WEAP_DICT;
 
