@@ -10,20 +10,23 @@ public class ProjectileController : MonoBehaviour
 
 
 
-    [SerializeField] private WeaponType type;
-    private float shotTime;
+    [SerializeField] private WeaponType type; //to check weapon type in inspector
+    private int damagePower;
+    //private float shotTime;
     private float lifeTimeMax;
     private float lifeTime;
 
     private Rigidbody rigid;
-
-    public void SetWeaponType(Weapon_SO weapon)
+    
+    private void Awake()
     {
-        rend.material.color = weapon.projectileColor;
-        rendTrail.material.color = weapon.projectileColor;
-        lifeTimeMax = weapon.projectileLifeTime;
+        bndCheck = GetComponent<BoundsCheck>();
+        rend = GetComponent<Renderer>();
+        rendTrail = GetComponent<TrailRenderer>();
+        rigid = GetComponent<Rigidbody>();
     }
 
+    #region Reset setup
     public void ResetProjectile(Vector3 position, Quaternion rotation, Vector3 velocity)
     {
         gameObject.transform.position = position;
@@ -34,39 +37,54 @@ public class ProjectileController : MonoBehaviour
         Invoke("TrailEnable", 0.1f);
     }
 
-    private void TrailEnable()
+    private void TrailEnable() //Used in ResetProjectile by Invoke method
     {
         rendTrail.enabled = true;
-    }
-
-    private void Awake()
-    {
-        bndCheck = GetComponent<BoundsCheck>();
-        rend = GetComponent<Renderer>();
-        rendTrail = GetComponent<TrailRenderer>();
-        rigid = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
     {
         lifeTime = 0f;
     }
+    #endregion
 
     void Update()
     {
         lifeTime +=Time.deltaTime;
 
-        if (lifeTime > lifeTimeMax)
-        {
-            rendTrail.enabled = false;
-            gameObject.SetActive(false);
-        }
-        if (!bndCheck.IsOnScreen)
-        {
-            rendTrail.enabled = false;
-            gameObject.SetActive(false);
-        }
+        if (lifeTime > lifeTimeMax || !bndCheck.IsOnScreen)
+            DeactivateProjectile();
     }
 
+    public void SetWeaponType(Weapon_SO weapon)
+    {
+        rend.material.color = weapon.projectileColor;
+        rendTrail.material.color = weapon.projectileColor;
+        lifeTimeMax = weapon.projectileLifeTime;
+        type = weapon.weaponType;
+        damagePower = weapon.damageOnHit;
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Projectile Collided");
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("With Enemy");
+            var damagables = collision.gameObject.GetComponents<IDamagable>();
+            foreach (IDamagable damagable in damagables)
+            {
+                Debug.Log("Ask for damage");
+                damagable.TakeDamage(damagePower);
+            }
+        }
+
+        DeactivateProjectile();
+    }
+
+    private void DeactivateProjectile()
+    {
+        rendTrail.enabled = false;
+        gameObject.SetActive(false);
+    }
 }

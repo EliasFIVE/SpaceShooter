@@ -15,8 +15,7 @@ public class LocalAudioController : MonoBehaviour
 
     public void PlayClip(AudioClip clip)
     {
-        audioSource.clip = clip;
-        audioSource.Play();
+        audioSource.PlayOneShot(clip);
     }
 
     [System.Obsolete]

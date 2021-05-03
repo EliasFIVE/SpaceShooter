@@ -21,7 +21,7 @@ MonoBehaviour:
   projectileColor: {r: 0, g: 1, b: 0.9725491, a: 1}
   delayBetweenShots: 0.5
   projectileVelocity: 40
-  damageOnHit: 1
-  projectileLifeTime: 1
-  projectileEnergyCost: 1
+  damageOnHit: 5
+  projectileLifeTime: 2
+  shootEnergyCost: 1
   shootFX: {fileID: 8300000, guid: 1f16e4839529dd642b85f3dd441a95ef, type: 3}

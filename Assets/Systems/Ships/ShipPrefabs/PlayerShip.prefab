@@ -4828,7 +4828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b50ea2dadb40c64f9bf845193ebeb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelayTime: 0
+  shootDelayTime: 0.02
   weaponType: 0
   weaponDefinition: {fileID: 0}
 --- !u!114 &671310956532151808
@@ -4843,7 +4843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b50ea2dadb40c64f9bf845193ebeb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelayTime: 0
+  shootDelayTime: 0.03
   weaponType: 0
   weaponDefinition: {fileID: 0}
 --- !u!114 &4121292023853562763
@@ -4858,7 +4858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b50ea2dadb40c64f9bf845193ebeb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelayTime: 0
+  shootDelayTime: 0.01
   weaponType: 0
   weaponDefinition: {fileID: 0}
 --- !u!114 &6548331390558489490
@@ -4873,7 +4873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b50ea2dadb40c64f9bf845193ebeb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelayTime: 0
+  shootDelayTime: 0.04
   weaponType: 0
   weaponDefinition: {fileID: 0}
 --- !u!114 &8207248160666470715
@@ -5056,6 +5056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07bb6dc77224cdc4394dc1dc73dd10a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipDefinition_Template: {fileID: 11400000, guid: 2c7ff5ccaf706f94dbfc574f606fdd32,
+    type: 2}
+  shipDefinition: {fileID: 0}
 --- !u!114 &589103604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5087,15 +5090,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01a7d45c671a2f438e648108653c94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  rollMult: -40
-  pitchMult: 20
   weapons:
   - {fileID: 8207248160666470715}
   - {fileID: 4121292023853562763}
   - {fileID: 6400586670453567642}
   - {fileID: 671310956532151808}
   - {fileID: 6548331390558489490}
+  rollMult: -40
+  pitchMult: 20
 --- !u!1 &4413378910247577409
 GameObject:
   m_ObjectHideFlags: 0
@@ -5830,6 +5832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434059978414646349, guid: bb3718d410eb26e4985362905c75b229,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3718d410eb26e4985362905c75b229, type: 3}

@@ -24,10 +24,10 @@ public class Weapon_SO :Item_SO
 
     public float delayBetweenShots = 0.1f;
     public float projectileVelocity = 20;
-    public float damageOnHit = 1;
+    public int damageOnHit = 1;
 
     public float projectileLifeTime = 10f;
-    public float projectileEnergyCost = 1f;
+    public int shootEnergyCost = 1;
 
     public AudioClip shootFX;
 }

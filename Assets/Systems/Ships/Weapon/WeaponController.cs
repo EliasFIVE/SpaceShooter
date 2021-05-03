@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    private ShipController ship;
+
     private GameObject collar; //Dummy object to show visual identification of current set weapon and to set initial projectile position
     private Renderer collarRend;
 
@@ -19,6 +21,11 @@ public class WeaponController : MonoBehaviour
         get { return (weaponType); }
         set { SetType(value); }
     }
+
+    /// <summary>
+    /// Apply weapon type for weapon. If weapon type is none, deactivates weapon gameonject
+    /// </summary>
+    /// <param name="type"></param>
     public void SetType(WeaponType type)
     {
         weaponType = type;
@@ -47,6 +54,7 @@ public class WeaponController : MonoBehaviour
     }
     void Start()
     {
+        ship = gameObject.GetComponentInParent<ShipController>();
         //WeaponType.none
         SetType(weaponType);
 
@@ -74,11 +82,13 @@ public class WeaponController : MonoBehaviour
             return;
         if (!gameObject.activeInHierarchy)
             return;
+        if (ship.CheckEnergy() < weaponDefinition.shootEnergyCost)
+            return;
         if (Time.time - lastShotTime < weaponDefinition.delayBetweenShots)
             return;
 
         Invoke("Fire", shootDelayTime);
-
+        ship.DecreaseEnergy(weaponDefinition.shootEnergyCost);
         lastShotTime = Time.time;
     }
 
