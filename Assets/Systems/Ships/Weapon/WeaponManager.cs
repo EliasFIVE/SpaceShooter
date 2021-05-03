@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//Move all to Spawn Manager
 public class WeaponManager : Manager<WeaponManager>
 {
     public Weapon_SO[] weaponDefinitions; //list of all weapon types

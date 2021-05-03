@@ -24,3 +24,4 @@ MonoBehaviour:
   damageOnHit: 1
   projectileLifeTime: 1
   projectileEnergyCost: 1
+  shootFX: {fileID: 8300000, guid: 1f16e4839529dd642b85f3dd441a95ef, type: 3}
