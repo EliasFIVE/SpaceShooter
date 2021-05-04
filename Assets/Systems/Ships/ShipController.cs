@@ -117,4 +117,31 @@ public class ShipController : MonoBehaviour, IDamagable
                 d.OnDestruction(transform.position);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<ShieldController>() != null)
+        {
+            ShieldController shield = other.gameObject.GetComponent<ShieldController>();
+            if (shield.ShieldLevel == 0)
+            {
+                return;
+            }
+            else
+            {
+                shield.AbsorbDamage(1000); //damage amount big enuogth to drop shield level
+                TakeDamage(1000);
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision) 
+    {
+        if (collision.gameObject.tag == gameObject.tag)
+            return;
+
+        Debug.Log("Ship collision");
+        TakeDamage(1000); //damage amount big enuogth to kill 
+        //OnCollisionEnter event will occur for both ships, so no need to damage collision.gameobject here
+    }
 }

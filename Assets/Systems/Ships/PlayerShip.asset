@@ -32,5 +32,5 @@ MonoBehaviour:
   maxShieldPower: 50
   currentShieldPower: 0
   maxShieldLevel: 4
-  shieldLevel: 4
+  shieldLevel: 1
   speed: 30

@@ -196,7 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7544624f44f58294382f9a8164021506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
+  weapons:
+  - {fileID: 2751217696860956854}
 --- !u!114 &4387138421562779884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789069529053207434, guid: d8ea53ee026eae443a25ab026478c5ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6544204388463151439, guid: d8ea53ee026eae443a25ab026478c5ba,
         type: 3}
@@ -308,3 +314,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5864705716423697331}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2751217696860956854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8596763856196946693, guid: d8ea53ee026eae443a25ab026478c5ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5864705716423697331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b50ea2dadb40c64f9bf845193ebeb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
