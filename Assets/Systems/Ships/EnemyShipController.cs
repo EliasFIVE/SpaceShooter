@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class EnemyShipController : ShipController
 {
+    public override void Start()
+    {
+        base.Start();
 
+        if (weapons.Length != 0)
+        {
+            WeaponType weapon = stats.GetDefaultWeapon();
+            SetWeaponTypeForAll(weapon);
+            StartCoroutine(EnemyFire(WeaponManager.Instance.GetWeaponDefinition(weapon).delayBetweenShots));
+        }
+    }
+
+    
 /*    private void OnCollisionEnter(Collision collision)
     {
         GameObject otherGO = collision.gameObject;
@@ -42,4 +54,12 @@ public class EnemyShipController : ShipController
                 break;
         }
     }*/
+    IEnumerator EnemyFire(float delaytime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(delaytime);
+            Fire();
+        }
+    }
 }

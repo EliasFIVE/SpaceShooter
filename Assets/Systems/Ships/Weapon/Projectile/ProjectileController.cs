@@ -67,14 +67,11 @@ public class ProjectileController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Projectile Collided");
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.GetComponent<BoundsCheck>().IsOnScreen)         // if target object is out of screen bounds - not damage it
         {
-            Debug.Log("With Enemy");
             var damagables = collision.gameObject.GetComponents<IDamagable>();
             foreach (IDamagable damagable in damagables)
             {
-                Debug.Log("Ask for damage");
                 damagable.TakeDamage(damagePower);
             }
         }

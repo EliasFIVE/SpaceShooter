@@ -9,6 +9,7 @@ public enum WeaponType
     blaster, //default
     spread, //Shotgun
     phaser,  //machinegun
+    enemyGun //default enemy weapon
     //missile,
     //laser,
     //mine,

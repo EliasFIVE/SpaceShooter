@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShipController : MonoBehaviour, IDamagable
 {
@@ -28,10 +30,7 @@ public class ShipController : MonoBehaviour, IDamagable
     #region Weapon interaction
     protected void Fire()
     {
-        if (fireDelegate != null)
-        {
-            fireDelegate();
-        }
+        fireDelegate?.Invoke();
     }
 
     /// <summary>
@@ -104,5 +103,18 @@ public class ShipController : MonoBehaviour, IDamagable
     public void TakeDamage(int damage)
     {
         stats.TakeDamage(damage);
+
+        Debug.LogFormat("{0} take {1} damage value", gameObject.name, damage.ToString());
+
+        if (stats.GetHealth() <= 0)
+        {
+            Debug.LogFormat("{0} health less then 0", gameObject.name);
+
+            StopAllCoroutines();
+
+            var destructibles = GetComponents(typeof(IDestructable));
+            foreach (IDestructable d in destructibles)
+                d.OnDestruction(transform.position);
+        }
     }
 }

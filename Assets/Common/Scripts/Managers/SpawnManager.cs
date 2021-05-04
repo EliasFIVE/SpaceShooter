@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : Singleton<SpawnManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject explosionPrefab;
+
+    public void CreateExplosionFX (Vector3 position)
     {
-        
+        GameObject explosion =  Instantiate<GameObject>(explosionPrefab,gameObject.transform);
+        Debug.Log("Explosion");
+        explosion.transform.position = position;
+        explosion.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
