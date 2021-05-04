@@ -17,7 +17,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
         get { return instance != null; }
     }
 
-    protected virtual void Awake()
+    public virtual void Awake()
     {
         if (instance != null)
         {

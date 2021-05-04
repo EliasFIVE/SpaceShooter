@@ -95,7 +95,7 @@ public class ShipController : MonoBehaviour, IDamagable
         while (energyGenerationActive)
         {
             yield return new WaitForSeconds(1f);
-            stats.ApplyEnergy(stats.GetEnergyGeneration());
+            stats.IncreaseEnergy(stats.GetEnergyGeneration());
         }
     }
     #endregion

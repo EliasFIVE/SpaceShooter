@@ -78,6 +78,23 @@ public class ProjectileController : MonoBehaviour
         DeactivateProjectile();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<ShieldController>() != null)
+        {
+            ShieldController shield = other.gameObject.GetComponent<ShieldController>();
+            if (shield.ShieldLevel == 0)
+            {
+                return;
+            }
+            else
+            {
+                shield.AbsorbDamage(damagePower);
+                DeactivateProjectile();
+            }
+        }
+    }
+
     private void DeactivateProjectile()
     {
         rendTrail.enabled = false;

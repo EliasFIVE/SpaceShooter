@@ -23,6 +23,7 @@ public class ShipStats : MonoBehaviour
 
         shipDefinition.currentHealth = shipDefinition.maxHealth;
         shipDefinition.currentEnergy = shipDefinition.maxEnergy;
+        shipDefinition.currentShieldPower = shipDefinition.maxShieldPower;
     }
 
     #region StatControllers
@@ -30,14 +31,24 @@ public class ShipStats : MonoBehaviour
     {
         shipDefinition.SetActiveWeapon(type);
     }
-    public void ApplyHealth(int amount)
+    public void IncreaseHealth(int amount)
     {
-        shipDefinition.ApplyHealth(amount);
+        shipDefinition.IncreaseHealth(amount);
     }
 
-    public void ApplyEnergy(int amount)
+    public void IncreaseEnergy(int amount)
     {
-        shipDefinition.ApplyEnergy(amount);
+        shipDefinition.IncreaseEnergy(amount);
+    }
+
+    public void IncreaseShieldPower(int amount)
+    {
+        shipDefinition.IncreaseShieldPower(amount);
+    }
+
+    public void IncreseShieldLevel()
+    {
+        shipDefinition.IncreaseShieldLevel();
     }
 
     public void TakeDamage(int amount)
@@ -48,6 +59,16 @@ public class ShipStats : MonoBehaviour
     public void TakeEnergy(int amount)
     {
         shipDefinition.DecreaseEnergy(amount);
+    }
+
+    public void TakeShieldPower(int amount)
+    {
+        shipDefinition.DecreaseShieldPower(amount);
+    }
+
+    public void DecreaseShieldLevel()
+    {
+        shipDefinition.DecreaseShieldLevel();
     }
     #endregion
 
@@ -67,9 +88,9 @@ public class ShipStats : MonoBehaviour
         return shipDefinition.energyGeneration;
     }
 
-    public int GetShieldEnergy()
+    public int GetShieldPower()
     {
-        return shipDefinition.currentShieldEnergy;
+        return shipDefinition.currentShieldPower;
     }
 
     public int GetShieldLevel()

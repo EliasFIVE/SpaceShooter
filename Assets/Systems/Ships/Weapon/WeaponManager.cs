@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponManager : Manager<WeaponManager>
+public class WeaponManager : Singleton<WeaponManager>
 {
     public Weapon_SO[] weaponDefinitions; //list of all weapon types
     static Dictionary<WeaponType, Weapon_SO> WEAP_DICT;

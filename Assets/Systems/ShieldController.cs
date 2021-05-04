@@ -8,27 +8,51 @@ public class ShieldController : MonoBehaviour
     public float rotationPerSecond = 0.1f;
 
     [Header("Set Dynamically")]
-    //public int levelShown = 0;
+    [SerializeField] private int shieldLevel = 0;
+    public int ShieldLevel
+    {
+        get { return shieldLevel; }
+    }
 
-    Material material;
+    private ShipStats ship;
+    private Material material;
 
     void Start()
     {
         material = GetComponent<Renderer>().material;
+        ship = gameObject.GetComponentInParent<ShipStats>();
+
+        ResetShieldLevel();
     }
 
     void Update()
     {
         float rZ = -(rotationPerSecond * Time.time * 360) % 360f;
         transform.rotation = Quaternion.Euler(0, 0, rZ);
+    }
 
-        //Not good to check this every frame
-        /*        int currentLevel = Mathf.FloorToInt(Hero.S.shieldLevel);
-                if (levelShown != currentLevel)
-                {
-                    levelShown = currentLevel;
-                }
+    private void ResetShieldLevel()
+    {
+        shieldLevel = ship.GetShieldLevel();
+        material.mainTextureOffset = new Vector2(0.2f * shieldLevel, 0);
+    }
 
-        material.mainTextureOffset = new Vector2(0.2f * levelShown, 0); */
+    public void AbsorbDamage(int damage)
+    {
+        if (shieldLevel == 0)
+        {
+            Debug.LogWarning("Shield with 0 level is trying to absorb damage");
+            return;
+        }
+        
+        if((ship.GetShieldPower() - damage) < 0)
+        {
+            ship.DecreaseShieldLevel();
+            ResetShieldLevel();
+        }
+        else
+        {
+            ship.TakeShieldPower(damage);
+        }
     }
 }

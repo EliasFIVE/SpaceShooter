@@ -22,8 +22,8 @@ public class ShipStats_SO : ScriptableObject
     public int currentEnergy = 0;
     public int energyGeneration = 0;
 
-    public int maxShieldEnergy = 0;
-    public int currentShieldEnergy = 0;
+    public int maxShieldPower = 0;
+    public int currentShieldPower = 0;
 
     public int maxShieldLevel = 0;
     public int shieldLevel = 0;
@@ -31,7 +31,7 @@ public class ShipStats_SO : ScriptableObject
     public int speed;
 
     #region Stat Increasers
-    public void ApplyHealth(int amount)
+    public void IncreaseHealth(int amount)
     {
         if ((currentHealth + amount) > maxHealth)
         {
@@ -46,7 +46,7 @@ public class ShipStats_SO : ScriptableObject
             OnPlayerGainedHealth.Invoke(amount); 
     }
 
-    public void ApplyEnergy(int amount)
+    public void IncreaseEnergy(int amount)
     {
         if ((currentEnergy + amount) > maxEnergy)
         {
@@ -58,23 +58,24 @@ public class ShipStats_SO : ScriptableObject
         }
     }
 
-    public void ApplyShieldEnergy(int amount)
+    public void IncreaseShieldPower(int amount)
     {
-        if ((currentShieldEnergy + amount) > maxShieldEnergy)
+        if ((currentShieldPower + amount) > maxShieldPower)
         {
-            currentShieldEnergy = maxEnergy;
+            currentShieldPower = maxShieldPower;
         }
         else
         {
-            currentShieldEnergy += amount;
+            currentShieldPower += amount;
         }
     }
 
-    public void UpdateShieldLevel()
+    public void IncreaseShieldLevel()
     {
         if (shieldLevel++ > maxShieldLevel)
         {
             shieldLevel = maxShieldLevel;
+            currentShieldPower = maxShieldPower;
         }
         else
         {
@@ -109,27 +110,32 @@ public class ShipStats_SO : ScriptableObject
         }
     }
 
-    public void DecreaseShieldEnergy(int amount)
+    public void DecreaseShieldPower(int amount)
     {
-        if ((currentShieldEnergy - amount) < 0)
+        if ((currentShieldPower - amount) < 0)
         {
-            currentShieldEnergy = 0;
-            DecreaseShieldLevel();
+            if(shieldLevel != 0)
+            {
+                DecreaseShieldLevel();
+                currentShieldPower = maxShieldPower;
+            }
         }
         else
         {
-            currentShieldEnergy -= amount;
+            currentShieldPower -= amount;
         }
     }
 
     public void DecreaseShieldLevel()
     {
-        if (shieldLevel-- == 0)
+        if (shieldLevel == 0)
         {
+            Debug.LogWarning("Trying to decrease 0 shield level");
             shieldLevel = 0;
         } else
         {
             shieldLevel--;
+            currentShieldPower = maxShieldPower;
         }
     }
     #endregion

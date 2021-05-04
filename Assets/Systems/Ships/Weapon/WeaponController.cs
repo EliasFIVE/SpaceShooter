@@ -137,8 +137,8 @@ public class WeaponController : MonoBehaviour
                 break;
         }
 
-/*        if (audioController != null)
-            audioController.PlayClip(weaponDefinition.shootFX, 0.9f, 1.1f);*/
+        if (audioController != null)
+            audioController.PlayClip(weaponDefinition.shootFX, 0.9f, 1.1f);
     }
 
     private ProjectileController GetProjectileFromPool()
