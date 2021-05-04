@@ -22,10 +22,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isPlayer: 0
+  initialWeapon: 4
+  currentWeapon: 0
   maxHealth: 10
   currentHealth: 0
-  maxEnergy: 0
+  maxEnergy: 100
   currentEnergy: 0
+  energyGeneration: 0
   maxShieldEnergy: 0
   currentShieldEnergy: 0
   maxShieldLevel: 0

@@ -56,13 +56,13 @@ public class WeaponController : MonoBehaviour
     {
         ship = gameObject.GetComponentInParent<ShipController>();
         //WeaponType.none
-        SetType(weaponType);
+        //SetType(weaponType);
 
         //Find fireDelegate in root game object
         GameObject rootGO = transform.root.gameObject;
-        if (rootGO.GetComponent<PlayerController>() != null)
+        if (rootGO.GetComponent<ShipController>() != null)
         {
-            rootGO.GetComponent<PlayerController>().fireDelegate += FireDelayed;
+            rootGO.GetComponent <ShipController>().fireDelegate += FireDelayed;
         }
 
         //Set AudioController
@@ -84,15 +84,18 @@ public class WeaponController : MonoBehaviour
             return;
         if (ship.CheckEnergy() < weaponDefinition.shootEnergyCost)
             return;
-        if (Time.time - lastShotTime < weaponDefinition.delayBetweenShots)
-            return;
+
+        if (ship.gameObject.tag == "Player")
+        {
+            if (Time.time - lastShotTime < weaponDefinition.delayBetweenShots)
+                return;
+        }
 
         Invoke("Fire", shootDelayTime);
         ship.DecreaseEnergy(weaponDefinition.shootEnergyCost);
         lastShotTime = Time.time;
     }
 
-    ///Transfer to weapon definition SO???
     public void Fire()
     {
         ProjectileController projectile;
@@ -126,15 +129,24 @@ public class WeaponController : MonoBehaviour
                 projectile.ResetProjectile(collar.transform.position, Quaternion.identity, projectileVelocity);
                 projectile.gameObject.SetActive(true);
                 break;
+
+            case WeaponType.enemyGun:
+                projectile = GetProjectileFromPool();
+                projectile.ResetProjectile(collar.transform.position, Quaternion.identity, projectileVelocity);
+                projectile.gameObject.SetActive(true);
+                break;
         }
 
-        if (audioController != null)
-            audioController.PlayClip(weaponDefinition.shootFX, 0.9f, 1.1f);
+/*        if (audioController != null)
+            audioController.PlayClip(weaponDefinition.shootFX, 0.9f, 1.1f);*/
     }
 
     private ProjectileController GetProjectileFromPool()
     {
         GameObject go = ObjectPooler.Instance.GetPooledObject();
+
+        ProjectileController projectile = go.GetComponent<ProjectileController>();
+        projectile.SetWeaponType(weaponDefinition);
 
         if (transform.parent.gameObject.tag == "Player")
         {
@@ -146,9 +158,6 @@ public class WeaponController : MonoBehaviour
             go.tag = "ProjectileEnemy";
             go.layer = LayerMask.NameToLayer("ProjectileEnemy");
         }
-
-        ProjectileController projectile = go.GetComponent<ProjectileController>();
-        projectile.SetWeaponType(weaponDefinition);
 
         return (projectile);
     }

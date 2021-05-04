@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9048206720efa7f42b28512a44dc9192, type: 3}
-  m_Name: ItemBlaster
+  m_Name: ItemEnemyGun
   m_EditorClassIdentifier: 
   type: 2
-  letter: B
-  color: {r: 0, g: 1, b: 0.97059774, a: 1}
-  weaponType: 1
+  letter: G
+  color: {r: 1, g: 0.11129015, b: 0, a: 1}
+  weaponType: 4
   projectilePrefab: {fileID: 3651440073324300692, guid: d0f8f80aa78e4564998f8463f69db0bb,
     type: 3}
-  projectileColor: {r: 0, g: 1, b: 0.9725491, a: 1}
+  projectileColor: {r: 1, g: 0.10980393, b: 0, a: 1}
   delayBetweenShots: 0.5
-  projectileVelocity: 40
-  damageOnHit: 5
-  projectileLifeTime: 2
+  projectileVelocity: 25
+  damageOnHit: 25
+  projectileLifeTime: 3
   shootEnergyCost: 1
   shootFX: {fileID: 8300000, guid: 1f16e4839529dd642b85f3dd441a95ef, type: 3}

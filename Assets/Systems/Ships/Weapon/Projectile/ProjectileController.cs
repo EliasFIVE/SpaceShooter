@@ -9,7 +9,6 @@ public class ProjectileController : MonoBehaviour
     private TrailRenderer rendTrail;
 
 
-
     [SerializeField] private WeaponType type; //to check weapon type in inspector
     private int damagePower;
     //private float shotTime;
@@ -52,7 +51,7 @@ public class ProjectileController : MonoBehaviour
     {
         lifeTime +=Time.deltaTime;
 
-        if (lifeTime > lifeTimeMax || !bndCheck.IsOnScreen)
+        if (lifeTime > lifeTimeMax)
             DeactivateProjectile();
     }
 

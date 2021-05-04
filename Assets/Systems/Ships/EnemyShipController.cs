@@ -12,7 +12,8 @@ public class EnemyShipController : ShipController
         {
             WeaponType weapon = stats.GetDefaultWeapon();
             SetWeaponTypeForAll(weapon);
-            StartCoroutine(EnemyFire(WeaponManager.Instance.GetWeaponDefinition(weapon).delayBetweenShots));
+            StartCoroutine(EnemyFire(1f));
+            //StartCoroutine(EnemyFire(WeaponManager.Instance.GetWeaponDefinition(weapon).delayBetweenShots));
         }
     }
 
