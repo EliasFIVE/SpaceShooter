@@ -58,6 +58,19 @@ public class GameManager : Manager<GameManager>
         InstantiateSystemPrefabs();
     }
 
+    private void Update()
+    {
+        if (_currentGameState == GameState.PREGAME)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+    }
+
     /// <summary>
     /// Istantiate all predefined System prefabs.
     /// </summary>

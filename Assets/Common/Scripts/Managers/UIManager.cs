@@ -43,4 +43,24 @@ public class UIManager : Manager<UIManager>
         //bool showUnitFrame = currentState == GameManager.GameState.RUNNING || currentState == GameManager.GameState.PAUSED;
         //unitFrame.SetActive(showUnitFrame);
     }
+
+
+    //Handle InGame UI
+
+/*    public void HideUI()
+    {
+        unitFrame.SetActive(false);
+        SetDummyCameraActive(false);
+        _mainMenu.gameObject.SetActive(false);
+        _pauseMenu.gameObject.SetActive(false);
+        TagLine.gameObject.SetActive(false);
+        TitleText.gameObject.SetActive(false);
+    }
+
+    public void ShowUI()
+    {
+        _mainMenu.gameObject.SetActive(true);
+        _mainMenu.FadeOut();
+        GameManager.Instance.CurrentGameState = GameManager.GameState.RUNNING;
+    }*/
 }
