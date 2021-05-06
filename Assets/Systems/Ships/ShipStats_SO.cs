@@ -6,13 +6,14 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "NewStats", menuName = "ShipStats", order = 1)]
 public class ShipStats_SO : ScriptableObject
 {
-    public Events.EventIntegerEvent OnHealthChange;
-    public Events.EventIntegerEvent OnEnergyChange;
-    public Events.EventIntegerEvent OnShieldPowerChange;
-    public Events.EventIntegerEvent OnShieldLevelChange;
-    public Events.EventWeaponTypeEvent OnWeaponTypeChange;
 
-    public UnityEvent OnPlayerDeath;
+    [HideInInspector] public Events.EventIntegerEvent OnHealthChange;
+    [HideInInspector] public Events.EventIntegerEvent OnEnergyChange;
+    [HideInInspector] public Events.EventIntegerEvent OnShieldPowerChange;
+    [HideInInspector] public Events.EventIntegerEvent OnShieldLevelChange;
+    [HideInInspector] public Events.EventWeaponTypeEvent OnWeaponTypeChange;
+
+    [HideInInspector] public UnityEvent OnPlayerDeath;
 
     public bool isPlayer = false;
 

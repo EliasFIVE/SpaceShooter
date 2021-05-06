@@ -104,7 +104,7 @@ public class ShipController : MonoBehaviour, IDamagable
     {
         stats.TakeDamage(damage);
 
-        Debug.LogFormat("{0} take {1} damage value", gameObject.name, damage.ToString());
+        Debug.LogFormat("{0} take {1} damage", gameObject.name, damage.ToString());
 
         if (stats.GetHealth() <= 0)
         {
