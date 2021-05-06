@@ -139,6 +139,8 @@ public class ShipController : MonoBehaviour, IDamagable
     {
         if (collision.gameObject.tag == gameObject.tag)
             return;
+        if (collision.gameObject.GetComponent<ProjectileController>() != null)
+            return;
 
         Debug.Log("Ship collision");
         TakeDamage(1000); //damage amount big enuogth to kill 

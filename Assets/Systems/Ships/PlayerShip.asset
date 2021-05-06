@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610dd947ea138cc4f92f963836b815bc, type: 3}
   m_Name: PlayerShip
   m_EditorClassIdentifier: 
-  OnPlayerDamaged:
+  OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
-  OnPlayerGainedHealth:
+  OnEnergyChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShieldPowerChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShieldLevelChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponTypeChange:
     m_PersistentCalls:
       m_Calls: []
   OnPlayerDeath:
@@ -32,5 +41,5 @@ MonoBehaviour:
   maxShieldPower: 50
   currentShieldPower: 0
   maxShieldLevel: 4
-  shieldLevel: 1
+  currentShieldLevel: 1
   speed: 30

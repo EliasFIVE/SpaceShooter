@@ -17,13 +17,14 @@ public class ShipStats : MonoBehaviour
         if (shipDefinition_Template != null)
             shipDefinition = Instantiate(shipDefinition_Template);
     }
-    private void Start()
+
+    private void OnEnable()
     {
         speed = shipDefinition.speed;
-
         shipDefinition.currentHealth = shipDefinition.maxHealth;
         shipDefinition.currentEnergy = shipDefinition.maxEnergy;
         shipDefinition.currentShieldPower = shipDefinition.maxShieldPower;
+        SetActiveWeapon(shipDefinition.initialWeapon);
     }
 
     #region StatControllers
@@ -95,7 +96,7 @@ public class ShipStats : MonoBehaviour
 
     public int GetShieldLevel()
     {
-        return shipDefinition.shieldLevel;
+        return shipDefinition.currentShieldLevel;
     }
 
     public WeaponType GetActiveWeapon()

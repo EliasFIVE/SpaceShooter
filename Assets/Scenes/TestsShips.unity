@@ -246,11 +246,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4903043346463131280, guid: 3e89fb4272f9b944ba5a90125582d667,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
       propertyPath: m_RootOrder
@@ -259,17 +254,17 @@ PrefabInstance:
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.1637847
       objectReference: {fileID: 0}
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -24.093407
       objectReference: {fileID: 0}
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -66.07779
       objectReference: {fileID: 0}
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
@@ -279,17 +274,17 @@ PrefabInstance:
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4903043346463131281, guid: 3e89fb4272f9b944ba5a90125582d667,
         type: 3}
@@ -580,6 +575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3107324986945038673, guid: cf08bdf32038fb54f8e057d457223946,
         type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107324986945038673, guid: cf08bdf32038fb54f8e057d457223946,
+        type: 3}
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
@@ -732,6 +732,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4413378909263495345, guid: a292cbbbba45fd240b365c18d96e8c8e,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4413378909263495350, guid: a292cbbbba45fd240b365c18d96e8c8e,
         type: 3}
       propertyPath: m_Name

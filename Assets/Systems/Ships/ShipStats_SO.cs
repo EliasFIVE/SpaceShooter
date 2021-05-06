@@ -6,8 +6,12 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "NewStats", menuName = "ShipStats", order = 1)]
 public class ShipStats_SO : ScriptableObject
 {
-    public Events.EventIntegerEvent OnPlayerDamaged;
-    public Events.EventIntegerEvent OnPlayerGainedHealth;
+    public Events.EventIntegerEvent OnHealthChange;
+    public Events.EventIntegerEvent OnEnergyChange;
+    public Events.EventIntegerEvent OnShieldPowerChange;
+    public Events.EventIntegerEvent OnShieldLevelChange;
+    public Events.EventWeaponTypeEvent OnWeaponTypeChange;
+
     public UnityEvent OnPlayerDeath;
 
     public bool isPlayer = false;
@@ -26,7 +30,7 @@ public class ShipStats_SO : ScriptableObject
     public int currentShieldPower = 0;
 
     public int maxShieldLevel = 0;
-    public int shieldLevel = 0;
+    public int currentShieldLevel = 0;
 
     public int speed;
 
@@ -43,7 +47,7 @@ public class ShipStats_SO : ScriptableObject
         }
 
         if (isPlayer)
-            OnPlayerGainedHealth.Invoke(amount); 
+            OnHealthChange.Invoke(currentHealth); 
     }
 
     public void IncreaseEnergy(int amount)
@@ -56,6 +60,9 @@ public class ShipStats_SO : ScriptableObject
         {
             currentEnergy += amount;
         }
+
+        if (isPlayer)
+            OnEnergyChange.Invoke(currentEnergy);
     }
 
     public void IncreaseShieldPower(int amount)
@@ -68,19 +75,25 @@ public class ShipStats_SO : ScriptableObject
         {
             currentShieldPower += amount;
         }
+
+        if (isPlayer)
+            OnShieldPowerChange.Invoke(currentShieldPower);
     }
 
     public void IncreaseShieldLevel()
     {
-        if (shieldLevel++ > maxShieldLevel)
+        if (currentShieldLevel++ > maxShieldLevel)
         {
-            shieldLevel = maxShieldLevel;
+            currentShieldLevel = maxShieldLevel;
             currentShieldPower = maxShieldPower;
         }
         else
         {
-            shieldLevel++;
+            currentShieldLevel++;
         }
+
+        if (isPlayer)
+            OnShieldLevelChange.Invoke(currentShieldLevel);
     }
 
     #endregion
@@ -90,14 +103,14 @@ public class ShipStats_SO : ScriptableObject
     {
         currentHealth -= amount;
 
-        if (isPlayer)
-            OnPlayerDamaged.Invoke(amount);
-
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Death();
         }
+
+        if (isPlayer)
+            OnHealthChange.Invoke(currentHealth);
     }
 
     public void DecreaseEnergy(int amount)
@@ -108,41 +121,50 @@ public class ShipStats_SO : ScriptableObject
         {
             currentEnergy = 0;
         }
+
+        if (isPlayer)
+            OnEnergyChange.Invoke(currentEnergy);
     }
 
     public void DecreaseShieldPower(int amount)
     {
-        if ((currentShieldPower - amount) < 0)
+        if ((currentShieldPower - amount) <= 0)
         {
-            if(shieldLevel != 0)
-            {
-                DecreaseShieldLevel();
-                currentShieldPower = maxShieldPower;
-            }
+            currentShieldPower = 0;
+            DecreaseShieldLevel();
         }
         else
         {
             currentShieldPower -= amount;
         }
+
+        if (isPlayer)
+            OnShieldPowerChange.Invoke(currentShieldPower);
     }
 
     public void DecreaseShieldLevel()
     {
-        if (shieldLevel == 0)
+        if (currentShieldLevel == 0)
         {
-            Debug.LogWarning("Trying to decrease 0 shield level");
-            shieldLevel = 0;
+            currentShieldLevel = 0;
         } else
         {
-            shieldLevel--;
-            currentShieldPower = maxShieldPower;
+            currentShieldLevel--;
+            if(currentShieldLevel != 0)
+                currentShieldPower = maxShieldPower;
         }
+
+        if (isPlayer)
+            OnShieldLevelChange.Invoke(currentShieldPower);
     }
     #endregion
 
     public void SetActiveWeapon(WeaponType type)
     {
         currentWeapon = type;
+
+        if (isPlayer)
+            OnWeaponTypeChange.Invoke(currentWeapon);
     }
     private void Death()
     {
