@@ -5,6 +5,8 @@ using UnityEngine;
 /// <summary>
 /// Local version of sound manager to control sound fx of a single object;
 /// </summary>
+
+[RequireComponent(typeof(AudioSource))]
 public class LocalAudioController : MonoBehaviour
 {
     private AudioSource audioSource;

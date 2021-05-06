@@ -82,7 +82,7 @@ public class ShipController : MonoBehaviour, IDamagable
     #region Energy
     public void DecreaseEnergy(int amount)
     {
-        stats.TakeEnergy(amount);
+        stats.DecreaseEnergy(amount);
     }
 
     public int CheckEnergy()

@@ -6,6 +6,7 @@ public class ShieldController : MonoBehaviour
 {
     [Header("Set in Inspector")]
     public float rotationPerSecond = 0.1f;
+    public bool rechargeActive = true;
 
     [Header("Set Dynamically")]
     [SerializeField] private int shieldLevel = 0;
@@ -23,6 +24,8 @@ public class ShieldController : MonoBehaviour
         ship = gameObject.GetComponentInParent<ShipStats>();
 
         ResetShieldLevel();
+
+        StartCoroutine(RechargeCoroutine());
     }
 
     void Update()
@@ -35,6 +38,23 @@ public class ShieldController : MonoBehaviour
     {
         shieldLevel = ship.GetShieldLevel();
         material.mainTextureOffset = new Vector2(0.2f * shieldLevel, 0);
+
+        //Because of coroutine delay in some cases appear non 0 shield energy whis 0 shield level
+        //So here are control checks
+        if (shieldLevel == 0)
+        {
+            StopCoroutine(RechargeCoroutine());
+            rechargeActive = false;
+            ship.TakeShieldPower(ship.GetShieldPower());
+            return;
+        }
+
+        if (shieldLevel != 0 && !rechargeActive)
+        {
+            rechargeActive = true;
+            StartCoroutine(RechargeCoroutine());
+            return;
+        }
     }
 
     public void AbsorbDamage(int damage)
@@ -49,10 +69,25 @@ public class ShieldController : MonoBehaviour
         {
             ship.DecreaseShieldLevel();
             ResetShieldLevel();
+
+        } else if ((ship.GetShieldPower() - damage) == 0)
+        {
+            ship.TakeShieldPower(damage);
+            ResetShieldLevel();
         }
         else
         {
             ship.TakeShieldPower(damage);
         }
     }
+
+    IEnumerator RechargeCoroutine()
+    {
+        while (rechargeActive)
+        {
+            yield return new WaitForSeconds(1f);
+            ship.RechargeShield();
+        }
+    }
+
 }

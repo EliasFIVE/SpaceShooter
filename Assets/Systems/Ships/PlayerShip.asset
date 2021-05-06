@@ -37,9 +37,10 @@ MonoBehaviour:
   currentHealth: 0
   maxEnergy: 100
   currentEnergy: 0
-  energyGeneration: 10
+  energyGeneration: 5
   maxShieldPower: 50
   currentShieldPower: 0
+  shieldRechargeSpeed: 10
   maxShieldLevel: 4
   currentShieldLevel: 1
   speed: 30

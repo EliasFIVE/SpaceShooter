@@ -57,7 +57,7 @@ public class ShipStats : MonoBehaviour
         shipDefinition.TakeDamage(amount);
     }
 
-    public void TakeEnergy(int amount)
+    public void DecreaseEnergy(int amount)
     {
         shipDefinition.DecreaseEnergy(amount);
     }
@@ -109,4 +109,16 @@ public class ShipStats : MonoBehaviour
         return shipDefinition.initialWeapon;
     }
     #endregion
+
+    public void RechargeShield()
+    {
+        if (shipDefinition.currentShieldLevel != 0 && shipDefinition.currentShieldPower < shipDefinition.maxShieldPower)
+        {
+            if (shipDefinition.currentEnergy > shipDefinition.shieldRechargeSpeed)
+            {
+                DecreaseEnergy(shipDefinition.shieldRechargeSpeed);
+                IncreaseShieldPower(shipDefinition.shieldRechargeSpeed);
+            }
+        }
+    }
 }

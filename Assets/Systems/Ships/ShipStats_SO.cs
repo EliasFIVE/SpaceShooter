@@ -29,6 +29,7 @@ public class ShipStats_SO : ScriptableObject
 
     public int maxShieldPower = 0;
     public int currentShieldPower = 0;
+    public int shieldRechargeSpeed = 0;
 
     public int maxShieldLevel = 0;
     public int currentShieldLevel = 0;
