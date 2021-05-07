@@ -44,8 +44,8 @@ public class PowerUpController : MonoBehaviour
 
         birthTime = Time.time;
 
-        cubeRend.material.color = item.color;
-        letter.text = item.letter;
+/*        cubeRend.material.color = item.color;
+        letter.text = item.letter;*/
     }
 
     void Update()

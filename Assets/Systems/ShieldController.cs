@@ -39,8 +39,8 @@ public class ShieldController : MonoBehaviour
         shieldLevel = ship.GetShieldLevel();
         material.mainTextureOffset = new Vector2(0.2f * shieldLevel, 0);
 
-        //Because of coroutine delay in some cases appear non 0 shield energy whis 0 shield level
-        //So here are control checks
+        //Because of coroutine delay (i think) in some cases appear non 0 shield energy whis 0 shield level
+        //So here are control checks to avoid this bug
         if (shieldLevel == 0)
         {
             StopCoroutine(RechargeCoroutine());
