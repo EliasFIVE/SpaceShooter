@@ -81,6 +81,12 @@ public class ShieldController : MonoBehaviour
         }
     }
 
+    public void PowerUpShield()
+    {
+        ship.IncreseShieldLevel();
+        ResetShieldLevel();
+    }
+
     IEnumerator RechargeCoroutine()
     {
         while (rechargeActive)

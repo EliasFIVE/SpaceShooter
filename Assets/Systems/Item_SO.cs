@@ -14,4 +14,5 @@ public class Item_SO : ScriptableObject
     public ItemType type = ItemType.none;
     public string letter;                   //Letter for bonus item object visual identification
     public Color color = Color.white;       //Item Color
+    Weapon_SO weapon;
 }

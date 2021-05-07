@@ -84,14 +84,13 @@ public class ShipStats_SO : ScriptableObject
 
     public void IncreaseShieldLevel()
     {
-        if (currentShieldLevel++ > maxShieldLevel)
+        currentShieldLevel++;
+
+        if (currentShieldLevel > maxShieldLevel)
         {
             currentShieldLevel = maxShieldLevel;
             currentShieldPower = maxShieldPower;
-        }
-        else
-        {
-            currentShieldLevel++;
+            return;
         }
 
         if (isPlayer)

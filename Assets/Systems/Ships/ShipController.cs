@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class ShipController : MonoBehaviour, IDamagable
 {
-    protected ShipStats stats;
+    [HideInInspector] public ShipStats stats;
 
     [SerializeField] protected WeaponController[] weapons;
     public delegate void WeaponFireDelegate();
@@ -36,7 +36,7 @@ public class ShipController : MonoBehaviour, IDamagable
     /// <summary>
     /// Deactivate all weapon
     /// </summary>
-    protected void ClearWeapons()
+    public void ClearWeapons()
     {
         stats.SetActiveWeapon(WeaponType.none);
 
@@ -63,6 +63,17 @@ public class ShipController : MonoBehaviour, IDamagable
     }
 
     /// <summary>
+    /// Activate weapon by given number in list and sets weapontype by type
+    /// </summary>
+    /// <param name="weaponNumber"></param>
+    /// <param name="type"></param>
+    protected void ActivateWeaponAndSetType(int weaponNumber, WeaponType type)
+    {
+        stats.SetActiveWeapon(type);
+        weapons[weaponNumber].SetType(type);
+    }
+
+    /// <summary>
     /// Set weapon type for active weapon objects
     /// </summary>
     /// <param name="type"></param>
@@ -76,6 +87,32 @@ public class ShipController : MonoBehaviour, IDamagable
                 weapon.SetType(type);
             }
         }
+    }
+
+    /// <summary>
+    /// Search for inactive in weapon list, activate first found and sets weapontype by type
+    /// </summary>
+    /// <param name="type"></param>
+    public void ActivateFirstInactiveWeapon(WeaponType type)
+    {
+        stats.SetActiveWeapon(type);
+        WeaponController weapon = GetEmptyWeaponSlot();
+        if (weapon != null)
+        {
+            weapon.SetType(type);
+        }
+    }
+
+    WeaponController GetEmptyWeaponSlot()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (weapons[i].WeaponType == WeaponType.none)
+            {
+                return (weapons[i]);
+            }
+        }
+        return (null);
     }
     #endregion
 

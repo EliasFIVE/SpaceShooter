@@ -14,7 +14,9 @@ public class PlayerController : ShipController
     {
         base.Start();
 
-        weapons[0].SetType(stats.GetDefaultWeapon());
+        ActivateFirstInactiveWeapon(stats.GetDefaultWeapon());
+        //ActivateWeaponAndSetType(0, stats.GetDefaultWeapon());
+        //weapons[0].SetType(stats.GetDefaultWeapon());
     }
 
     void Update()
@@ -48,9 +50,6 @@ public class PlayerController : ShipController
         //Rotate ship when move
         transform.rotation = Quaternion.Euler(y * pitchMult, x * rollMult, 0);
     }
-
-
-
     // Not destroy object if death, but make it inactive
     public void OnDestruction(GameObject destroyer)
     {

@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 8930446411200385769}
   - component: {fileID: 8930446411200385746}
   - component: {fileID: 8930446411200385749}
+  - component: {fileID: 2835229666932997327}
+  - component: {fileID: 7513923638369847211}
   m_Layer: 12
-  m_Name: PowerUp 1
+  m_Name: PowerUp
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,6 +135,36 @@ MonoBehaviour:
   offLeft: 0
   offUp: 0
   offDown: 0
+--- !u!114 &2835229666932997327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8930446411200385768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c05ad092a9fe040b290fb63ef04616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotMinMax: {x: 15, y: 90}
+  driftMinMax: {x: 0.25, y: 2}
+  lifeTime: 6
+  fadeTime: 4
+  item: {fileID: 0}
+--- !u!65 &7513923638369847211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8930446411200385768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6, y: 2.1226563, z: 0}
+  m_Center: {x: 0, y: 0, z: -2}
 --- !u!1 &8930446412540274484
 GameObject:
   m_ObjectHideFlags: 0

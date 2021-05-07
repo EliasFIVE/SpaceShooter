@@ -39,6 +39,7 @@ public class WeaponController : MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }
+
         weaponDefinition = WeaponManager.Instance.GetWeaponDefinition(type);
         collarRend.material.color = weaponDefinition.color;
         lastShotTime = 0;

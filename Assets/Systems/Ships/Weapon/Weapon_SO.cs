@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public enum WeaponType
 {
     none,
@@ -16,7 +15,7 @@ public enum WeaponType
 }
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Item/Weapon Item", order = 1)]
-public class Weapon_SO :Item_SO
+public class Weapon_SO : Item_SO
 {
     [Header ("Weapon setup")]
     public WeaponType weaponType = WeaponType.none;
