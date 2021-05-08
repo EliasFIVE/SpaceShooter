@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemyShipController : ShipController
 {
+    MoveShip mover;
+    BoundsCheck bound;
     public override void Start()
     {
         base.Start();
 
         if (weapons.Length != 0)
         {
+            bound = gameObject.GetComponent<BoundsCheck>();
             WeaponType weapon = stats.GetDefaultWeapon();
             SetWeaponTypeForAll(weapon);
             StartCoroutine(EnemyFire(WeaponManager.Instance.GetWeaponDefinition(weapon).delayBetweenShots));
@@ -21,7 +24,8 @@ public class EnemyShipController : ShipController
         while (true)
         {
             yield return new WaitForSeconds(delaytime);
-            Fire();
+            if(bound.IsOnScreen)
+                Fire();
         }
     }
 }

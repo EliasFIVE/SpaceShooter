@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610dd947ea138cc4f92f963836b815bc, type: 3}
   m_Name: EnemyShipDeafult
   m_EditorClassIdentifier: 
-  OnPlayerDamaged:
+  OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
-  OnPlayerGainedHealth:
+  OnEnergyChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShieldPowerChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShieldLevelChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponTypeChange:
     m_PersistentCalls:
       m_Calls: []
   OnPlayerDeath:
@@ -29,8 +38,9 @@ MonoBehaviour:
   maxEnergy: 100
   currentEnergy: 0
   energyGeneration: 0
-  maxShieldEnergy: 0
-  currentShieldEnergy: 0
+  maxShieldPower: 0
+  currentShieldPower: 0
+  shieldRechargeSpeed: 0
   maxShieldLevel: 0
-  shieldLevel: 0
-  speed: 0
+  currentShieldLevel: 0
+  speed: 10

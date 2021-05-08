@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4507569356218808036}
   - component: {fileID: 8656351877672950314}
   - component: {fileID: 5680697155882455310}
+  - component: {fileID: 717792566}
   m_Layer: 9
   m_Name: EnemyShipType2
   m_TagString: Enemy
@@ -53,7 +54,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &5998484330672194351
 MonoBehaviour:
@@ -152,6 +153,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b4682f4149f4c42a3e6c6cdc33f712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &717792566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998484330672194350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be83800d2aa5f04580faa007a4c588b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveFrequency: 2
+  waveWidth: 4
+  waveRotY: 45
 --- !u!1 &8929507621575826005
 GameObject:
   m_ObjectHideFlags: 0

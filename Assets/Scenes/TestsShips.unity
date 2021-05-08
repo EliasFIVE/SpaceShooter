@@ -902,7 +902,7 @@ PrefabInstance:
     - target: {fileID: 1073029634418240809, guid: 405423f0727ba4d45a32290d4ba4e694,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 67.5
       objectReference: {fileID: 0}
     - target: {fileID: 1073029634418240809, guid: 405423f0727ba4d45a32290d4ba4e694,
         type: 3}
@@ -966,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 5998484330672194336, guid: f544c0f25fce37641a8aaca99f744ccc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 69.1
       objectReference: {fileID: 0}
     - target: {fileID: 5998484330672194336, guid: f544c0f25fce37641a8aaca99f744ccc,
         type: 3}
@@ -1030,12 +1030,12 @@ PrefabInstance:
     - target: {fileID: 3190417839161656069, guid: 8f5584a78ba628e478948b5ded61dd41,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3190417839161656069, guid: 8f5584a78ba628e478948b5ded61dd41,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18
+      value: 51.9
       objectReference: {fileID: 0}
     - target: {fileID: 3190417839161656069, guid: 8f5584a78ba628e478948b5ded61dd41,
         type: 3}
@@ -1109,7 +1109,7 @@ PrefabInstance:
     - target: {fileID: 4827027450204660042, guid: 7a98f32e6e4b47f4481716374cc4c462,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8
+      value: 58.6
       objectReference: {fileID: 0}
     - target: {fileID: 4827027450204660042, guid: 7a98f32e6e4b47f4481716374cc4c462,
         type: 3}
@@ -1219,6 +1219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyShipType0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107324986945038684, guid: cf08bdf32038fb54f8e057d457223946,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf08bdf32038fb54f8e057d457223946, type: 3}
@@ -1523,11 +1528,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShipType4
       objectReference: {fileID: 0}
-    - target: {fileID: 7775858435656773479, guid: 9aa142898da5c4246843482b03a6c487,
-        type: 3}
-      propertyPath: keepOnScreen
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7775858435656773480, guid: 9aa142898da5c4246843482b03a6c487,
         type: 3}
       propertyPath: m_RootOrder
@@ -1541,7 +1541,7 @@ PrefabInstance:
     - target: {fileID: 7775858435656773480, guid: 9aa142898da5c4246843482b03a6c487,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8
+      value: 55.1
       objectReference: {fileID: 0}
     - target: {fileID: 7775858435656773480, guid: 9aa142898da5c4246843482b03a6c487,
         type: 3}
