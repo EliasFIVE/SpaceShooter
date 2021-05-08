@@ -1216,6 +1216,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1780789048247917773, guid: a292cbbbba45fd240b365c18d96e8c8e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713960697292278700, guid: a292cbbbba45fd240b365c18d96e8c8e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713960697301513660, guid: a292cbbbba45fd240b365c18d96e8c8e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713960698366963108, guid: a292cbbbba45fd240b365c18d96e8c8e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713960698894149163, guid: a292cbbbba45fd240b365c18d96e8c8e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4413378909263495345, guid: a292cbbbba45fd240b365c18d96e8c8e,
         type: 3}
       propertyPath: m_Mass
