@@ -14,9 +14,12 @@ public class ShipController : MonoBehaviour, IDamagable
 
     protected bool energyGenerationActive = true;
 
+    protected Vector3 initialPosition;
     public virtual void Start()
     {
         stats = gameObject.GetComponent<ShipStats>();
+
+        initialPosition = transform.position;
 
         if (weapons.Length != 0)
         {
@@ -153,6 +156,18 @@ public class ShipController : MonoBehaviour, IDamagable
             foreach (IDestructable d in destructibles)
                 d.OnDestruction(transform.position);
         }
+    }
+
+    protected void MoveToInitialPosition()
+    {
+        transform.position = initialPosition;
+        gameObject.SetActive(true);
+    }
+
+    protected void MoveToInitialPosition(float timeDelay)
+    {
+        Invoke("MoveToInitialPosition", timeDelay);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

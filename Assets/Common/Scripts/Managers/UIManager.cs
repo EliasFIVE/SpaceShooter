@@ -42,6 +42,8 @@ public class UIManager : Manager<UIManager>
 
     void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
     {
+        Debug.LogFormat("Game state {0}", currentState.ToString());
+
         dummyCamera.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
         bootMenu.SetActive(currentState == GameManager.GameState.PREGAME);
 

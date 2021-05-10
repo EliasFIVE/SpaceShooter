@@ -609,7 +609,7 @@ PrefabInstance:
     - target: {fileID: 7139067978942933088, guid: 42251710fe33c1d43aad1497d9fd37dd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7139067978942933095, guid: 42251710fe33c1d43aad1497d9fd37dd,
         type: 3}
@@ -903,6 +903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InGameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 393175476288125850, guid: 06488fdd59d429940a9fa7f196a85b90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2428946334870436517, guid: 06488fdd59d429940a9fa7f196a85b90,
         type: 3}

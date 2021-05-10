@@ -18,9 +18,6 @@ public class MoveShip : MonoBehaviour
         bound = gameObject.GetComponent<BoundsCheck>();
         borders = ScreenBorders.Instance;
         speed = gameObject.GetComponent<ShipStats>().Speed;
-
-        initialPosition = pos;
-        birthTime = Time.time;
     }
 
     public Vector3 pos
@@ -40,6 +37,12 @@ public class MoveShip : MonoBehaviour
         Vector3 tempPos = pos;
         tempPos.y -= speed * deltaTime;
         pos = tempPos;
+    }
+
+    private void OnEnable()
+    {
+        initialPosition = pos;
+        birthTime = Time.time;
     }
 
     private void Update()

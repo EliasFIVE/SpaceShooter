@@ -14,6 +14,20 @@ public class SpawnManager : Singleton<SpawnManager>
     [Header("Set several equal items to increase chance of appiarence")]
     [SerializeField] List<Item_SO> items;
 
+    [Space(10)]
+    [Header("Enemy spawn settings")]
+    [SerializeField] private float enemyDefaultPadding = 1.5f;
+
+
+    private BoundsCheck bound;
+    private ScreenBorders borders;
+
+
+    protected virtual void Start()
+    {
+        bound = gameObject.GetComponent<BoundsCheck>();
+        borders = ScreenBorders.Instance;
+    }
 
     public void CreateExplosionFX (Vector3 position)
     {
@@ -36,5 +50,23 @@ public class SpawnManager : Singleton<SpawnManager>
             powerUp.transform.position = position;
             powerUp.SetActive(true);
         }
+    }
+
+    public void CreateEnemy(GameObject enemyPrefab)
+    {
+        GameObject enemy = Instantiate<GameObject>(enemyPrefab);
+
+        //Set Enemy position
+        float enemyPadding = enemyDefaultPadding;
+        if (enemy.GetComponent<BoundsCheck>() != null)
+        {
+            enemyPadding = Mathf.Abs(enemy.GetComponent<BoundsCheck>().radius);
+        }
+        Vector3 position = Vector3.zero;
+        float xMin = -borders.CamWidth + enemyPadding;
+        float xMax = borders.CamWidth - enemyPadding;
+        position.x = Random.Range(xMin, xMax);
+        position.y = borders.CamHeight + 5*enemyPadding;
+        enemy.transform.position = position;
     }
 }
