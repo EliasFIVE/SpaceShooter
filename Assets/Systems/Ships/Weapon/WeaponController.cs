@@ -80,7 +80,7 @@ public class WeaponController : MonoBehaviour
 
     public void FireDelayed()
     {
-        Debug.Log("Fire in weapon controller");
+        //Debug.Log("Fire in weapon controller");
 
         if (weaponType == WeaponType.none)
             return;

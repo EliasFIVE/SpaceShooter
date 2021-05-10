@@ -33,7 +33,7 @@ public class ShipController : MonoBehaviour, IDamagable
     #region Weapon interaction
     protected void Fire()
     {
-        Debug.Log("Fire in ship controller");
+        //Debug.Log("Fire in ship controller");
         fireDelegate?.Invoke();
     }
 
@@ -143,6 +143,7 @@ public class ShipController : MonoBehaviour, IDamagable
     {
         stats.TakeDamage(damage);
 
+        //Add visualization of damage
         Debug.LogFormat("{0} take {1} damage", gameObject.name, damage.ToString());
 
         if (stats.GetHealth() <= 0)

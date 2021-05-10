@@ -58,7 +58,7 @@ public class EnemyShipController : ShipController
 
     public void ActivateFire()
     {
-        Debug.Log("ActivateFire");
+        //Debug.Log("ActivateFire");
         StartCoroutine(EnemyFire(WeaponManager.Instance.GetWeaponDefinition(weapon).delayBetweenShots));
     }
 

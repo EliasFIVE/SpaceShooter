@@ -12,8 +12,8 @@ public class ShipStats_SO : ScriptableObject
     [HideInInspector] public Events.EventIntegerEvent OnShieldPowerChange;
     [HideInInspector] public Events.EventIntegerEvent OnShieldLevelChange;
     [HideInInspector] public Events.EventWeaponTypeEvent OnWeaponTypeChange;
-    [HideInInspector] public UnityEvent OnShipDeath;
     [HideInInspector] public UnityEvent OnPlayerDeath;
+    [HideInInspector] public UnityEvent OnShipDeath;
 
     public bool isPlayer = false;
 
