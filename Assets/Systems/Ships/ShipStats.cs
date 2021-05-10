@@ -16,10 +16,7 @@ public class ShipStats : MonoBehaviour
     {
         if (shipDefinition_Template != null)
             shipDefinition = Instantiate(shipDefinition_Template);
-    }
 
-    private void OnEnable()
-    {
         speed = shipDefinition.speed;
         shipDefinition.currentHealth = shipDefinition.maxHealth;
         shipDefinition.currentEnergy = shipDefinition.maxEnergy;

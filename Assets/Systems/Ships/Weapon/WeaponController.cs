@@ -52,22 +52,23 @@ public class WeaponController : MonoBehaviour
     {
         collar = transform.Find("Collar").gameObject; //Not best descision: to find object by string name. Need to think of alt way. But don't want to set it manualy in inspector
         collarRend = collar.GetComponent<Renderer>();
-    }
-    void Start()
-    {
-        ship = gameObject.GetComponentInParent<ShipController>();
-        //WeaponType.none
-        //SetType(weaponType);
 
         //Find fireDelegate in root game object
+        // Attention!!!! If you create parent object to ship itself, it will break WeaponController
         GameObject rootGO = transform.root.gameObject;
         if (rootGO.GetComponent<ShipController>() != null)
         {
-            rootGO.GetComponent <ShipController>().fireDelegate += FireDelayed;
+            rootGO.GetComponent<ShipController>().fireDelegate += FireDelayed;
         }
+    }
+
+    void Start()
+    {
+        ship = gameObject.GetComponentInParent<ShipController>();
+
 
         //Set AudioController
-        if(gameObject.GetComponent<LocalAudioController>() != null)
+        if (gameObject.GetComponent<LocalAudioController>() != null)
         {
             audioController = gameObject.GetComponent<LocalAudioController>();
         } else
@@ -79,6 +80,8 @@ public class WeaponController : MonoBehaviour
 
     public void FireDelayed()
     {
+        Debug.Log("Fire in weapon controller");
+
         if (weaponType == WeaponType.none)
             return;
         if (!gameObject.activeInHierarchy)
@@ -91,7 +94,7 @@ public class WeaponController : MonoBehaviour
             if (Time.time - lastShotTime < weaponDefinition.delayBetweenShots)
                 return;
         }
-
+        
         Invoke("Fire", shootDelayTime);
         ship.DecreaseEnergy(weaponDefinition.shootEnergyCost);
         lastShotTime = Time.time;
@@ -101,8 +104,8 @@ public class WeaponController : MonoBehaviour
     {
         ProjectileController projectile;
         Vector3 projectileVelocity = Vector3.up * weaponDefinition.projectileVelocity;
-        if (transform.up.y < 0) projectileVelocity.y = -projectileVelocity.y;
-        
+        if (transform.up.y < 0) projectileVelocity.y = -projectileVelocity.y;        
+
         switch (weaponType)
         {
             case WeaponType.blaster:

@@ -12,7 +12,7 @@ public class ShipStats_SO : ScriptableObject
     [HideInInspector] public Events.EventIntegerEvent OnShieldPowerChange;
     [HideInInspector] public Events.EventIntegerEvent OnShieldLevelChange;
     [HideInInspector] public Events.EventWeaponTypeEvent OnWeaponTypeChange;
-
+    [HideInInspector] public UnityEvent OnShipDeath;
     [HideInInspector] public UnityEvent OnPlayerDeath;
 
     public bool isPlayer = false;
@@ -170,7 +170,13 @@ public class ShipStats_SO : ScriptableObject
     private void Death()
     {
         if (isPlayer)
+        {
             OnPlayerDeath.Invoke();
+        }
+        else
+        {
+            OnShipDeath.Invoke();
+        }
     }
 
 }

@@ -16,7 +16,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
     [Space(10)]
     [Header("Enemy spawn settings")]
-    [SerializeField] private float enemyDefaultPadding = 1.5f;
+    [SerializeField] private float enemyDefaultPadding = 3f;
 
 
     private BoundsCheck bound;
@@ -55,10 +55,10 @@ public class SpawnManager : Singleton<SpawnManager>
     public void CreateEnemy(GameObject enemyPrefab)
     {
         GameObject enemy = Instantiate<GameObject>(enemyPrefab);
-
+        enemy.SetActive(false);
         //Set Enemy position
         float enemyPadding = enemyDefaultPadding;
-        if (enemy.GetComponent<BoundsCheck>() != null)
+        if (enemy.GetComponent<BoundsCheck>() != null && enemy.GetComponent<BoundsCheck>().radius != 0)
         {
             enemyPadding = Mathf.Abs(enemy.GetComponent<BoundsCheck>().radius);
         }
@@ -66,7 +66,9 @@ public class SpawnManager : Singleton<SpawnManager>
         float xMin = -borders.CamWidth + enemyPadding;
         float xMax = borders.CamWidth - enemyPadding;
         position.x = Random.Range(xMin, xMax);
-        position.y = borders.CamHeight + 5*enemyPadding;
+        position.y = borders.CamHeight + enemyPadding;
+        position.z = 0;
         enemy.transform.position = position;
+        enemy.SetActive(true);
     }
 }

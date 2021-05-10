@@ -7,21 +7,43 @@ public class EnemyShipController : ShipController
 {
     //MoveShip mover;
     BoundsCheck bound;
-    UnityEvent ShipDeathEvent;
 
+    private WeaponType weapon;
+    private bool weaponReady = false;
+
+
+    private void OnEnable()
+    {
+        if (weaponReady)
+        {
+            Debug.Log("reenableFire");
+            ActivateFire();
+        }
+    }
     public override void Start()
     {
         base.Start();
-        bound = gameObject.GetComponent<BoundsCheck>();
 
-        if (EnemiesManager.Instance != null)
-            ShipDeathEvent.AddListener(EnemiesManager.Instance.OnEmemyDeath);
+        if (gameObject.GetComponent<BoundsCheck>() != null)
+        {
+            bound = gameObject.GetComponent<BoundsCheck>();
+        }
+        else
+        {
+            Debug.LogWarningFormat("BoundsCheck not set to the enemy ship prefab of {0}", gameObject.name);
+        }
+
+
+        EnemiesManager enemiesManager = EnemiesManager.Instance;
+        if (enemiesManager != null)
+            stats.shipDefinition.OnShipDeath.AddListener(enemiesManager.OnEmemyDeath);
 
         if (weapons.Length != 0)
         {
-            WeaponType weapon = stats.GetDefaultWeapon();
+            weapon = stats.GetDefaultWeapon();
             SetWeaponTypeForAll(weapon);
-            StartCoroutine(EnemyFire(WeaponManager.Instance.GetWeaponDefinition(weapon).delayBetweenShots));
+            weaponReady = true; //bugFix: need to reactivate fire after reenable of object, but onEnable runs before Start
+            ActivateFire();
         }
     }
 
@@ -34,11 +56,11 @@ public class EnemyShipController : ShipController
         }
     }
 
-    private void OnDestroy()
+    public void ActivateFire()
     {
-        ShipDeathEvent.Invoke();
+        Debug.Log("ActivateFire");
+        StartCoroutine(EnemyFire(WeaponManager.Instance.GetWeaponDefinition(weapon).delayBetweenShots));
     }
-
 
     IEnumerator EnemyFire(float delaytime)
     {
@@ -46,7 +68,10 @@ public class EnemyShipController : ShipController
         {
             yield return new WaitForSeconds(delaytime);
             if (bound.IsOnScreen)
+            {
+                //Debug.Log("EnemyFire in enemyshipcontroller");
                 Fire();
+            } 
         }
     }
 }

@@ -33,6 +33,7 @@ public class ShipController : MonoBehaviour, IDamagable
     #region Weapon interaction
     protected void Fire()
     {
+        Debug.Log("Fire in ship controller");
         fireDelegate?.Invoke();
     }
 
@@ -46,8 +47,6 @@ public class ShipController : MonoBehaviour, IDamagable
         foreach (WeaponController weapon in weapons)
         {
             weapon.SetType(WeaponType.none);
-            //weaponOverheatTime = 0f;
-            //energy = coolDownTime;
         }
     }
 

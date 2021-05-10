@@ -14,9 +14,9 @@ public class EnemiesManager : Singleton<EnemiesManager>
     private void Start()
     {
         activeWaveIndex = 0;
-        SpawnActiveWave();
+        StartActiveWave();
     }
-    public void SpawnWaveByNumber(int waveIndex)
+    public void StartWaveByNumber(int waveIndex)
     {
         activeWaveIndex = waveIndex;
         EnemyWave_SO activeWave = EnemyWaves[waveIndex];
@@ -25,15 +25,15 @@ public class EnemiesManager : Singleton<EnemiesManager>
         StartCoroutine(SpawnEnemyWaveCoroutine(activeWave,timeDelayBetweenShipSpawn));
     }
 
-    public void SpawnActiveWave()
+    public void StartActiveWave()
     {
-        SpawnWaveByNumber(activeWaveIndex);
+        StartWaveByNumber(activeWaveIndex);
     }
 
-    public void SpawnNextWave()
+    public void StartNextWave()
     {
         activeWaveIndex++;
-        SpawnActiveWave();
+        StartActiveWave();
     }
 
     IEnumerator SpawnEnemyWaveCoroutine(EnemyWave_SO wave, float timeDelay)
@@ -49,5 +49,22 @@ public class EnemiesManager : Singleton<EnemiesManager>
     {
         activeEnemies -= 1; ;
         Debug.LogFormat("Enemy killed. Active enemies left {0}", activeEnemies);
+
+        if (activeEnemies == 0)
+        {
+            if (activeWaveIndex == (EnemyWaves.Count - 1))
+            {
+                OnAllWavesComplete();
+                return;
+            }
+
+            StartNextWave();
+        }
+    }
+
+    private void OnAllWavesComplete()
+    {
+        Debug.Log("All level waves complete");
+        //Setup level win call to gamemanager
     }
 }
