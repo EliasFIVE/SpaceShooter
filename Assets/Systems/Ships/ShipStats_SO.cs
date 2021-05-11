@@ -16,6 +16,7 @@ public class ShipStats_SO : ScriptableObject
     [HideInInspector] public UnityEvent OnShipDeath;
 
     public bool isPlayer = false;
+    private bool isDead = false;
 
     public WeaponType initialWeapon;
     public WeaponType currentWeapon;
@@ -102,6 +103,9 @@ public class ShipStats_SO : ScriptableObject
     #region Stat Reducers
     public void TakeDamage(int amount)
     {
+        if (isDead)
+            return;
+
         currentHealth -= amount;
 
         if (currentHealth <= 0)
@@ -169,8 +173,12 @@ public class ShipStats_SO : ScriptableObject
     }
     private void Death()
     {
+
+        isDead = true;
+
         if (isPlayer)
         {
+            Debug.Log("Player death!!!!!");
             OnPlayerDeath.Invoke();
         }
         else

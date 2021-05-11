@@ -56,6 +56,8 @@ public class GameManager : Manager<GameManager>
     {
         _instancedSystemPrefabs = new List<GameObject>();
         InstantiateSystemPrefabs();
+
+        UpdateState(GameState.PREGAME);
     }
 
     private void Update()

@@ -32,7 +32,7 @@ public class SpawnManager : Singleton<SpawnManager>
     public void CreateExplosionFX (Vector3 position)
     {
         GameObject explosion =  Instantiate<GameObject>(explosionPrefab,gameObject.transform);
-        Debug.Log("Explosion");
+        //Debug.Log("Explosion");
         explosion.transform.position = position;
         explosion.SetActive(true);
     }
@@ -42,7 +42,7 @@ public class SpawnManager : Singleton<SpawnManager>
         if (Random.value < powerUpChance)
         {
             GameObject powerUp = Instantiate<GameObject>(powerUpPrefab, gameObject.transform);
-            Debug.Log("PowerUp Created");
+            //Debug.Log("PowerUp Created");
 
             Item_SO item = items[Random.Range(0, items.Count)];
             powerUp.GetComponent<PowerUpController>().SetType(item);

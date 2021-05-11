@@ -34,6 +34,9 @@ public class ShipController : MonoBehaviour, IDamagable
     protected void Fire()
     {
         //Debug.Log("Fire in ship controller");
+
+        //Add SoundFX of damage
+
         fireDelegate?.Invoke();
     }
 
@@ -141,14 +144,16 @@ public class ShipController : MonoBehaviour, IDamagable
 
     public void TakeDamage(int damage)
     {
+        //Debug.LogFormat("{0} take {1} damage", gameObject.name, damage.ToString());
+
         stats.TakeDamage(damage);
 
         //Add visualization of damage
-        Debug.LogFormat("{0} take {1} damage", gameObject.name, damage.ToString());
+        //Add SoundFX of damage
 
         if (stats.GetHealth() <= 0)
         {
-            Debug.LogFormat("{0} health less then 0", gameObject.name);
+            //Debug.LogFormat("{0} health less then 0", gameObject.name);
 
             StopAllCoroutines();
 
@@ -175,26 +180,24 @@ public class ShipController : MonoBehaviour, IDamagable
         if (other.gameObject.GetComponent<ShieldController>() != null)
         {
             ShieldController shield = other.gameObject.GetComponent<ShieldController>();
+            
             if (shield.ShieldLevel == 0)
-            {
                 return;
-            }
-            else
-            {
-                shield.AbsorbDamage(1000); //damage amount big enuogth to drop shield level
-                TakeDamage(1000);
-            }
+            
+            shield.AbsorbDamage(1000); //damage amount big enougth to drop down shield level
+            TakeDamage(1000);
         }
     }
 
     private void OnCollisionEnter(Collision collision) 
     {
+        //Debug.Log("Ship collision");
+
         if (collision.gameObject.tag == gameObject.tag)
             return;
         if (collision.gameObject.GetComponent<ProjectileController>() != null)
             return;
 
-        Debug.Log("Ship collision");
         TakeDamage(1000); //damage amount big enuogth to kill 
         //OnCollisionEnter event will occur for both ships, so no need to damage collision.gameobject here
     }

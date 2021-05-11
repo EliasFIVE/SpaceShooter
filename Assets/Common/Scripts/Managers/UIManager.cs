@@ -10,6 +10,9 @@ public class UIManager : Manager<UIManager>
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private GameOverMenu gameOverMenu;
     [SerializeField] private InGameUIManager inGameUI;
+
+    [SerializeField] private ExciterController textExciter;
+
     public InGameUIManager InGameUI
     {
         get { return inGameUI; }
@@ -56,29 +59,15 @@ public class UIManager : Manager<UIManager>
         gameOverMenu.gameObject.SetActive(currentState == GameManager.GameState.GAMEOVER);
     }
 
+    //Exciters setup
+    public void ShowTextExciter(string text)
+    {
+        Debug.Log("Show exciter");
 
-    //Handle InGame UI
+        textExciter.gameObject.SetActive(true);
+        textExciter.ShowExciter(text);
 
-    /*    public void HideUI()
-        {
-            unitFrame.SetActive(false);
-            SetDummyCameraActive(false);
-            _mainMenu.gameObject.SetActive(false);
-            _pauseMenu.gameObject.SetActive(false);
-            TagLine.gameObject.SetActive(false);
-            TitleText.gameObject.SetActive(false);
-        }
-
-        public void ShowUI()
-        {
-            _mainMenu.gameObject.SetActive(true);
-            _mainMenu.FadeOut();
-            GameManager.Instance.CurrentGameState = GameManager.GameState.RUNNING;
-        }*/
-
-
-
-    //exciters setup
+    }
 
 /*    public void PlayNextWave()
     {

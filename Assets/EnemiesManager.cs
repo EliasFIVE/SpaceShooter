@@ -18,11 +18,14 @@ public class EnemiesManager : Singleton<EnemiesManager>
     }
     public void StartWaveByNumber(int waveIndex)
     {
+        Debug.LogFormat("New wave with {0} enemies", activeEnemies.ToString());
+
         activeWaveIndex = waveIndex;
         EnemyWave_SO activeWave = EnemyWaves[waveIndex];
         activeEnemies = activeWave.NumberOfEnemies;
-
         StartCoroutine(SpawnEnemyWaveCoroutine(activeWave,timeDelayBetweenShipSpawn));
+
+        UIManager.Instance.ShowTextExciter("Enemy wave " + (waveIndex + 1).ToString());
     }
 
     public void StartActiveWave()
@@ -48,7 +51,7 @@ public class EnemiesManager : Singleton<EnemiesManager>
     public void OnEmemyDeath()
     {
         activeEnemies -= 1; ;
-        Debug.LogFormat("Enemy killed. Active enemies left {0}", activeEnemies);
+        //Debug.LogFormat("Enemy killed. Active enemies left {0}", activeEnemies);
 
         if (activeEnemies == 0)
         {
