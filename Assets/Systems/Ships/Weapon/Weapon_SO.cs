@@ -29,5 +29,5 @@ public class Weapon_SO : Item_SO
     public float projectileLifeTime = 10f;
     public int shootEnergyCost = 1;
 
-    public AudioClip shootFX;
+    public AudioClip shootSoundFX;
 }

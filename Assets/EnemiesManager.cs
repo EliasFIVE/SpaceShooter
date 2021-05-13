@@ -68,6 +68,14 @@ public class EnemiesManager : Singleton<EnemiesManager>
     private void OnAllWavesComplete()
     {
         Debug.Log("All level waves complete");
-        //Setup level win call to gamemanager
+
+        UIManager.Instance.ShowTextExciter("Level complete");
+
+        Invoke("OnGameComplete", 2f);
+    }
+
+    private void OnGameComplete()
+    {
+        GameManager.Instance.EndGame();
     }
 }

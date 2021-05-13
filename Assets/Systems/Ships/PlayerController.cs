@@ -10,6 +10,8 @@ public class PlayerController : ShipController
     [SerializeField] private float rollMult = -40;
     [SerializeField] private float pitchMult = 20;
 
+    private float lastShotTime; //Time from last shot
+
     public override void Start()
     {
         base.Start();
@@ -31,10 +33,17 @@ public class PlayerController : ShipController
 
         if (Input.GetAxis("Jump") == 1)
         {
-            Fire();
+            PlayerFire();
         }
     }
 
+    private void PlayerFire()
+    {
+        if (Time.time - lastShotTime < WeaponManager.Instance.GetWeaponDefinition(stats.GetActiveWeapon()).delayBetweenShots)
+            return;
+        Fire();
+        lastShotTime = Time.time;
+    }
     /// <summary>
     /// Move ship by user input
     /// </summary>

@@ -15,7 +15,7 @@ public class WeaponController : MonoBehaviour
     [Header("Set Dynamically")]
     [SerializeField] private WeaponType weaponType = WeaponType.none;
     [SerializeField] private Weapon_SO weaponDefinition;
-    private float lastShotTime; //Time from last shot
+/*    private float lastShotTime; //Time from last shot*/
     public WeaponType WeaponType
     {
         get { return (weaponType); }
@@ -42,10 +42,8 @@ public class WeaponController : MonoBehaviour
 
         weaponDefinition = WeaponManager.Instance.GetWeaponDefinition(type);
         collarRend.material.color = weaponDefinition.color;
-        lastShotTime = 0;
+/*        lastShotTime = 0;*/
     }
-
-    private LocalAudioController audioController;
 
     #region Initial setup
     private void Awake()
@@ -65,16 +63,6 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         ship = gameObject.GetComponentInParent<ShipController>();
-
-
-        //Set AudioController
-        if (gameObject.GetComponent<LocalAudioController>() != null)
-        {
-            audioController = gameObject.GetComponent<LocalAudioController>();
-        } else
-        {
-            Debug.LogWarningFormat("AudioSource for weapon of object {0} not set.", gameObject.name);
-        }
     }
     #endregion
 
@@ -89,15 +77,15 @@ public class WeaponController : MonoBehaviour
         if (ship.CheckEnergy() < weaponDefinition.shootEnergyCost)
             return;
 
-        if (ship.gameObject.tag == "Player")
+/*        if (ship.gameObject.tag == "Player")
         {
             if (Time.time - lastShotTime < weaponDefinition.delayBetweenShots)
                 return;
-        }
-        
+        }*/
+
         Invoke("Fire", shootDelayTime);
         ship.DecreaseEnergy(weaponDefinition.shootEnergyCost);
-        lastShotTime = Time.time;
+/*        lastShotTime = Time.time;*/
     }
 
     public void Fire()
@@ -141,8 +129,8 @@ public class WeaponController : MonoBehaviour
                 break;
         }
 
-        if (audioController != null)
-            audioController.PlayClip(weaponDefinition.shootFX, 0.9f, 1.1f);
+/*        if (audioController != null)
+            audioController.PlayClip(weaponDefinition.shootFX, 0.9f, 1.1f);*/
     }
 
     private ProjectileController GetProjectileFromPool()

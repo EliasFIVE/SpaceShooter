@@ -37,6 +37,8 @@ public class ShipStats_SO : ScriptableObject
 
     public int speed;
 
+    public AudioClip hitSoundFX;
+
     #region Stat Increasers
     public void IncreaseHealth(int amount)
     {

@@ -8,7 +8,7 @@ using System.Linq;
 
 public class GameManager : Manager<GameManager>
 {
-    #region GameStates definitin
+    #region GameStates definition
     public enum GameState
     {
         PREGAME,
@@ -36,22 +36,6 @@ public class GameManager : Manager<GameManager>
 
     public Events.EventGameState OnGameStateChanged;
 
-
-    /*private PlayerController playerController;
-    private PlayerController PLayer
-    {
-        get
-        {
-            if (null == playerController)
-            {
-                playerController = FindObjectOfType<PlayerController>();
-            }
-
-            return playerController;
-        }
-    }*/
-
-
     private void Start()
     {
         _instancedSystemPrefabs = new List<GameObject>();
@@ -62,14 +46,10 @@ public class GameManager : Manager<GameManager>
 
     private void Update()
     {
-        if (_currentGameState == GameState.PREGAME)
-        {
-            return;
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
+            if (_currentGameState == GameState.RUNNING || _currentGameState ==GameState.PAUSED)
+                TogglePause();
         }
     }
 
@@ -110,6 +90,10 @@ public class GameManager : Manager<GameManager>
                 break;
 
             case GameState.PAUSED:
+                Time.timeScale = 0.0f;
+                break;
+
+            case GameState.GAMEOVER:
                 Time.timeScale = 0.0f;
                 break;
 
@@ -178,6 +162,11 @@ public class GameManager : Manager<GameManager>
     public void TogglePause()
     {
         UpdateState(_currentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);
+    }
+
+    public void EndGame()
+    {
+        UpdateState(GameState.GAMEOVER);
     }
 
     protected void OnDestroy()

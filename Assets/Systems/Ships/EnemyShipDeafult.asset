@@ -30,6 +30,9 @@ MonoBehaviour:
   OnPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
+  OnShipDeath:
+    m_PersistentCalls:
+      m_Calls: []
   isPlayer: 0
   initialWeapon: 4
   currentWeapon: 0
@@ -44,3 +47,4 @@ MonoBehaviour:
   maxShieldLevel: 0
   currentShieldLevel: 0
   speed: 10
+  hitSoundFX: {fileID: 8300000, guid: 7f06b06339dae8a4dbf382c4de3fdcdf, type: 3}

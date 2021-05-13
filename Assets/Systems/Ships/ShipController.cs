@@ -12,12 +12,14 @@ public class ShipController : MonoBehaviour, IDamagable
     public delegate void WeaponFireDelegate();
     public WeaponFireDelegate fireDelegate;
 
-    protected bool energyGenerationActive = true;
+    protected LocalAudioController audioController;
 
+    protected bool energyGenerationActive = true;
     protected Vector3 initialPosition;
     public virtual void Start()
     {
         stats = gameObject.GetComponent<ShipStats>();
+        audioController = gameObject.GetComponent<LocalAudioController>();
 
         initialPosition = transform.position;
 
@@ -35,9 +37,10 @@ public class ShipController : MonoBehaviour, IDamagable
     {
         //Debug.Log("Fire in ship controller");
 
-        //Add SoundFX of damage
-
         fireDelegate?.Invoke();
+
+        if (audioController != null)
+            audioController.PlayClip(WeaponManager.Instance.GetWeaponDefinition(stats.GetActiveWeapon()).shootSoundFX, 0.9f, 1.1f);
     }
 
     /// <summary>
@@ -149,7 +152,8 @@ public class ShipController : MonoBehaviour, IDamagable
         stats.TakeDamage(damage);
 
         //Add visualization of damage
-        //Add SoundFX of damage
+        if (audioController != null)
+            audioController.PlayClip(stats.shipDefinition.hitSoundFX, 0.9f, 1.1f);
 
         if (stats.GetHealth() <= 0)
         {

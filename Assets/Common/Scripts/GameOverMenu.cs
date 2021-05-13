@@ -1,18 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Button retryButton;
+    [SerializeField] private Button mainMenuButton;
+
     void Start()
     {
-        
+        retryButton.onClick.AddListener(HandleRetryClicked);
+        mainMenuButton.onClick.AddListener(HandleMainMenuClicked);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleMainMenuClicked()
     {
-        
+        GameManager.Instance.GoToMainMenu();
     }
+
+    private void HandleRetryClicked()
+    {
+        GameManager.Instance.StartNewGame(); 
+    }
+
 }

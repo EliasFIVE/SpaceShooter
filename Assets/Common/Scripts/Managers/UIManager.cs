@@ -32,7 +32,7 @@ public class UIManager : Manager<UIManager>
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("UI Space pressed");
+                //Debug.Log("UI Space pressed");
                 GameManager.Instance.GoToMainMenu();
             }
         }
