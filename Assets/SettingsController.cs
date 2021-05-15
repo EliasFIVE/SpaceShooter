@@ -17,6 +17,14 @@ public class SettingsController : Manager<SettingsController>
     private Dictionary<Text, int> inittialTextSizes;
     private Dictionary<Text, Color> initialTextColors;
 
+    public OptionsSet_SO DefaultOptionsSet
+    {
+        get { return defaultOptionsSet; }
+    }
+    public OptionsSet_SO ActiveOptionsSet
+    {
+        get { return activeOptionsSet; }
+    }
 
 
     #region Initial SetUp
@@ -110,7 +118,7 @@ public class SettingsController : Manager<SettingsController>
     public void CancelTempSettings()
     {
         SetUpFontSizes(activeOptionsSet.fontSizeAddition);
-        SetUpFontColors(activeOptionsSet.fontColor);
+        SetUpFontColors(activeOptionsSet.fontColor);        
     }
 
     public void SetDefaultSettings()
