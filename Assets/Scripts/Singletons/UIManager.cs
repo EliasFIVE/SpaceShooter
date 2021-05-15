@@ -10,7 +10,8 @@ public class UIManager : Manager<UIManager>
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private GameOverMenu gameOverMenu;
     [SerializeField] private InGameUIManager inGameUI;
-
+    [SerializeField] private OptionsMenu optionsMenu;
+ 
     [SerializeField] private ExciterController textExciter;
 
     public InGameUIManager InGameUI
@@ -67,6 +68,18 @@ public class UIManager : Manager<UIManager>
         textExciter.gameObject.SetActive(true);
         textExciter.ShowExciter(text);
 
+    }
+
+    public void ToggleOptionsMenu()
+    {
+        if (optionsMenu.gameObject.activeInHierarchy)
+        {
+            optionsMenu.gameObject.SetActive(false);
+        }
+        else
+        {
+            optionsMenu.gameObject.SetActive(true);
+        }
     }
 
 /*    public void PlayNextWave()

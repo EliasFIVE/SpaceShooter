@@ -24,4 +24,4 @@ MonoBehaviour:
   damageOnHit: 5
   projectileLifeTime: 2
   shootEnergyCost: 1
-  shootSoundFX: {fileID: 8300000, guid: 1f16e4839529dd642b85f3dd441a95ef, type: 3}
+  shootSoundFX: {fileID: 8300000, guid: 55bf1a3c072502845ac8624b7e0c50d0, type: 3}

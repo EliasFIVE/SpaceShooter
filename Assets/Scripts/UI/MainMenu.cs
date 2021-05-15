@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
 
     private void HandleOptionsClicked()
     {
-        throw new NotImplementedException();
+        UIManager.Instance.ToggleOptionsMenu();
     }
 
     private void HandleStartClicked()
