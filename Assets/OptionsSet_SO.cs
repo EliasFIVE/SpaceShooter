@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "NewOptionsSet", menuName = "OptionsSet", order = 1)]
+[CreateAssetMenu(fileName = "NewOptionsSet", menuName = "Options/OptionsSet", order = 1)]
 public class OptionsSet_SO : ScriptableObject
 {
     public int fontSizeAddition;

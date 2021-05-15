@@ -44,6 +44,8 @@ public class SettingsController : Manager<SettingsController>
         ClearAllDictionaries();
 
         SetUpTextDictionaries();
+
+        SetDefaultSettings();
     }
 
     #endregion
