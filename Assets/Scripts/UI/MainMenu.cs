@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Set in Inspector")]
     [SerializeField] private Button startButton;
     [SerializeField] private Button optionsButton;
     [SerializeField] private Button quitButton;
