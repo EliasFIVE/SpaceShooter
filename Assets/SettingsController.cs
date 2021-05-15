@@ -43,7 +43,7 @@ public class SettingsController : Manager<SettingsController>
     {
         ClearAllDictionaries();
 
-        SetUpTextDitionaries();
+        SetUpTextDictionaries();
     }
 
     #endregion
@@ -59,7 +59,7 @@ public class SettingsController : Manager<SettingsController>
     /// <summary>
     /// Search for text components in children objects and save backup of there font size and color settings;
     /// </summary>
-    private void SetUpTextDitionaries()
+    private void SetUpTextDictionaries()
     {
         Component[] foundTexts = GetComponentsInChildren(typeof(Text),true);
         if (foundTexts == null)
@@ -106,6 +106,11 @@ public class SettingsController : Manager<SettingsController>
         foreach (Text text in texts)
         {
             text.color = tempFontColor;
+
+            if (text.gameObject.GetComponent<TextBlink>() != null)
+            {
+                text.gameObject.GetComponent<TextBlink>().color1 = tempFontColor;
+            }
         }
     }
 
