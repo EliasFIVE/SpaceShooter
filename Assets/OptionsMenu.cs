@@ -13,6 +13,10 @@ public class OptionsMenu : MonoBehaviour
 
     [SerializeField] private Slider fontSizeSlider;
     [SerializeField] private Dropdown fontColorDropdown;
+    [SerializeField] private Dropdown colorThemeDropdown;
+    [SerializeField] private Slider masterVolumeSlider;
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private Slider soundFXVolumeSlider;
 
     [Header("Order must match FontColor dropdown menu")]
     [SerializeField] private List<Color> fontColors;
@@ -72,11 +76,11 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetMusicVolume(float value)
     {
-
+        Debug.LogWarning("Not Implemented");
     }
 
     public void SetSoundFXVolume(float value)
     {
-
+        Debug.LogWarning("Not Implemented");
     }
 }
