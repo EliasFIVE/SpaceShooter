@@ -1509,6 +1509,16 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HandleFontColorDropdown
       objectReference: {fileID: 0}
+    - target: {fileID: 6742139689431848458, guid: 539cca76483fa1a4fafd790d518d0bc2,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742139689431848458, guid: 539cca76483fa1a4fafd790d518d0bc2,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleFontSizeSlider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 539cca76483fa1a4fafd790d518d0bc2, type: 3}
 --- !u!224 &1414604693 stripped
