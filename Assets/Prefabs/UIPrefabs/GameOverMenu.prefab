@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -93,13 +93,14 @@ GameObject:
   - component: {fileID: 2120180796325430189}
   - component: {fileID: 2120180796325430190}
   - component: {fileID: 278316062568367823}
+  - component: {fileID: 4198318042548005929}
   m_Layer: 5
   m_Name: GameOverMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2120180796325430191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -173,6 +174,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   retryButton: {fileID: 2620106976071360439}
   mainMenuButton: {fileID: 1186251888966485691}
+--- !u!114 &4198318042548005929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120180796325430184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2373393389539237519
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +198,7 @@ GameObject:
   - component: {fileID: 6350638133694278741}
   - component: {fileID: 5493767301362092737}
   - component: {fileID: 2620106976071360439}
+  - component: {fileID: 5238978855107403455}
   m_Layer: 5
   m_Name: B_Retry
   m_TagString: Untagged
@@ -294,6 +308,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5238978855107403455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373393389539237519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2527524857293434834
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +388,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -403,6 +429,7 @@ GameObject:
   - component: {fileID: 1219848263210760941}
   - component: {fileID: 6018356519857719931}
   - component: {fileID: 1186251888966485691}
+  - component: {fileID: 5618219065389223754}
   m_Layer: 5
   m_Name: B_MainMenu
   m_TagString: Untagged
@@ -512,3 +539,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5618219065389223754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5727967938592903180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

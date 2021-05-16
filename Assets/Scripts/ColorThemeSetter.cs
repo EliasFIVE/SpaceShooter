@@ -29,9 +29,15 @@ public class ColorThemeSetter: MonoBehaviour
     {
         FindThemeComponent();
     }
+
+    private void OnEnable()
+    {
+        SetColorByTheme(SettingsController.Instance.ActiveOptionsSet.colorTheme);
+        SettingsController.Instance.ColorThemeChange.AddListener(SetColorByTheme);
+    }
     private void Start()
     {
-        SettingsController.Instance.ColorThemeChange.AddListener(SetColorByTheme);
+        //SettingsController.Instance.ColorThemeChange.AddListener(SetColorByTheme);
     }
 
     /*    private void FindThemeComponent()
@@ -181,4 +187,8 @@ public class ColorThemeSetter: MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        SettingsController.Instance.ColorThemeChange.RemoveListener(SetColorByTheme);
+    }
 }
