@@ -12,6 +12,10 @@ public class SettingsController : Manager<SettingsController>
     [SerializeField] private OptionsSet_SO activeOptionsSet;
     [SerializeField] private int tempFontSizeAddition;
     [SerializeField] private Color tempFontColor;
+    [SerializeField] private ColorTheme_SO tempColorTheme;
+    //Master volume
+    //MusicVolume
+    //FXVolume
 
     private List<Text> texts;
     private Dictionary<Text, int> inittialTextSizes;
@@ -26,6 +30,7 @@ public class SettingsController : Manager<SettingsController>
         get { return activeOptionsSet; }
     }
 
+    public Events.EventColorThemeChange ColorThemeChange;
 
     #region Initial SetUp
     public override void Awake()
@@ -38,6 +43,7 @@ public class SettingsController : Manager<SettingsController>
         texts = new List<Text>();
         inittialTextSizes = new Dictionary<Text, int>();
         initialTextColors = new Dictionary<Text, Color>();
+
     }
     void Start()
     {
@@ -75,7 +81,7 @@ public class SettingsController : Manager<SettingsController>
             if (!text.resizeTextForBestFit)
             {
                 texts.Add(text);
-                Debug.Log("Text added to list");
+                //Debug.Log("Text added to list");
             }
         }
 
@@ -94,8 +100,10 @@ public class SettingsController : Manager<SettingsController>
 
     public void SetUpFontSizes(int value)
     {
-        Debug.Log("SetUpFontSizes in SettingsController called");
+        //Debug.Log("SetUpFontSizes in SettingsController called");
+
         tempFontSizeAddition = value;
+
         foreach (Text text in texts)
         {
             text.fontSize = inittialTextSizes[text] + tempFontSizeAddition;
@@ -105,6 +113,7 @@ public class SettingsController : Manager<SettingsController>
     public void SetUpFontColors(Color value)
     {
         tempFontColor = value;
+
         foreach (Text text in texts)
         {
             text.color = tempFontColor;
@@ -116,21 +125,50 @@ public class SettingsController : Manager<SettingsController>
         }
     }
 
+    public void SetUpColorTheme(ColorTheme_SO colorTheme)
+    {
+        tempColorTheme = colorTheme;
+
+        SetUpFontColors(colorTheme.fontColor);
+        ColorThemeChange.Invoke(colorTheme);
+    }
+
+    //Master volume
+
+    //MusicVolume
+
+    //FXVolume
+
     public void ApplyTempSettings()
     {
         activeOptionsSet.fontSizeAddition = tempFontSizeAddition;
         activeOptionsSet.fontColor = tempFontColor;
+        activeOptionsSet.colorTheme = tempColorTheme;
+
+        //Master volume
+        //MusicVolume
+        //FXVolume
     }
 
     public void CancelTempSettings()
     {
         SetUpFontSizes(activeOptionsSet.fontSizeAddition);
-        SetUpFontColors(activeOptionsSet.fontColor);        
+        SetUpFontColors(activeOptionsSet.fontColor);
+        SetUpColorTheme(activeOptionsSet.colorTheme);
+
+        //Master volume
+        //MusicVolume
+        //FXVolume
     }
 
     public void SetDefaultSettings()
     {
         SetUpFontSizes(defaultOptionsSet.fontSizeAddition);
-        SetUpFontColors(defaultOptionsSet.fontColor);
+        SetUpFontColors(defaultOptionsSet.colorTheme.fontColor); //Color Theme has higher priority
+        SetUpColorTheme(defaultOptionsSet.colorTheme);
+
+        //Master volume
+        //MusicVolume
+        //FXVolume
     }
 }

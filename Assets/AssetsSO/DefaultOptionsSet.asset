@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: DefaultOptionsSet
   m_EditorClassIdentifier: 
   fontSizeAddition: 0
-  fontColor: {r: 0, g: 0, b: 0, a: 1}
+  fontColor: {r: 0.0627451, g: 0.27058825, b: 0.043137256, a: 1}
+  colorTheme: {fileID: 11400000, guid: 06c87f8671aa14341be69c5a0f5ea3a2, type: 2}

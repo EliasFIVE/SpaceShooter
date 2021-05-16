@@ -8,4 +8,5 @@ public class OptionsSet_SO : ScriptableObject
 {
     public int fontSizeAddition;
     public Color fontColor;
+    public ColorTheme_SO colorTheme;
 }

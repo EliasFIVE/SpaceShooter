@@ -20,17 +20,24 @@ public class OptionsMenu : MonoBehaviour
 
     [Header("Order must match FontColor dropdown menu")]
     [SerializeField] private List<Color> fontColors;
+    [SerializeField] private List<ColorTheme_SO> colorThemes;
     void Start()
     {
         applyButton.onClick.AddListener(HandleApplyClicked);
         cancelButton.onClick.AddListener(HandleCancelClicked);
         defaultButton.onClick.AddListener(HandleDefaultClicked);
+
+        SetControllersByOptionsSet(SettingsController.Instance.DefaultOptionsSet);
     }
 
     public void SetControllersByOptionsSet(OptionsSet_SO settings)
     {
         fontSizeSlider.value = settings.fontSizeAddition;
-        fontColorDropdown.value = fontColors.IndexOf(settings.fontColor);        
+        colorThemeDropdown.value = colorThemes.IndexOf(settings.colorTheme);
+        fontColorDropdown.value = fontColors.IndexOf(settings.fontColor);
+        //masterVolumeSlider
+        //musicVolumeSlider
+        //soundFXVolumeSlider
     }
 
     private void HandleDefaultClicked()
@@ -52,35 +59,43 @@ public class OptionsMenu : MonoBehaviour
         UIManager.Instance.ToggleOptionsMenu();
     }
 
-    public void SetFontSize (float value)
+    public void HandleFontSizeSlider (float value)
     {
         //Debug.Log("OptionsMenu SetFontSize value: " + value.ToString());
         SettingsController.Instance.SetUpFontSizes((int)value);
     }
 
-    public void SetFontColor (Dropdown dropdown)
+    public void HandleFontColorDropdown (Dropdown dropdown)
     {
         Color color = fontColors[dropdown.value];
         SettingsController.Instance.SetUpFontColors(color);
     }
 
-    public void SetColorTheme (Dropdown value)
+    public void HandleColorThemeDropdown (Dropdown dropdown)
     {
+        ColorTheme_SO theme = colorThemes[dropdown.value];
+        fontColorDropdown.value = fontColors.IndexOf(theme.fontColor);
+        SettingsController.Instance.SetUpColorTheme(theme);
+    }
+
+    public void HandleMasterVolumeSlider(float value)
+    {
+
+        //SET
         Debug.LogWarning("Not Implemented");
     }
 
-    public void SetMasterVolume(float value)
+    public void HandleMusicVolumeSlider(float value)
     {
+
+        //SET
         Debug.LogWarning("Not Implemented");
     }
 
-    public void SetMusicVolume(float value)
+    public void HandleSoundFXVolumeSlider(float value)
     {
-        Debug.LogWarning("Not Implemented");
-    }
 
-    public void SetSoundFXVolume(float value)
-    {
+        //SET
         Debug.LogWarning("Not Implemented");
     }
 }

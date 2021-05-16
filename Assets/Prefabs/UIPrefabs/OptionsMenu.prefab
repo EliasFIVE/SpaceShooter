@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5541599949346123829}
   - component: {fileID: 6133476851244989488}
   - component: {fileID: 7863647260756956300}
+  - component: {fileID: 1231368730974711185}
   m_Layer: 0
   m_Name: DefaultButton
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1231368730974711185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417296772788676826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1637425526505364300
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +373,7 @@ GameObject:
   - component: {fileID: 5550882877265511860}
   - component: {fileID: 3224074934413028968}
   - component: {fileID: 2484102013288477760}
+  - component: {fileID: 2448693017563806440}
   m_Layer: 0
   m_Name: ApplyButton
   m_TagString: Untagged
@@ -469,6 +483,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2448693017563806440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819462856720941027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742139687317839880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,6 +2546,7 @@ GameObject:
   - component: {fileID: 6742139688294334721}
   - component: {fileID: 6742139688294334722}
   - component: {fileID: 6742139688294334723}
+  - component: {fileID: 5506619258906417571}
   m_Layer: 0
   m_Name: Dropdown
   m_TagString: Untagged
@@ -2645,19 +2672,31 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 4672329406866590045}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: HandleColorThemeDropdown
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 6742139688294334723}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Dropdown, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &5506619258906417571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742139688294334733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742139688311105749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6742139688311105748}
   - component: {fileID: 6742139688311105771}
+  - component: {fileID: 9056613683209412028}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -2760,6 +2800,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9056613683209412028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742139688311105749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742139688317564320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6742139688317564327}
   - component: {fileID: 6742139688317564326}
+  - component: {fileID: 6473048316428536798}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -2862,6 +2915,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6473048316428536798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742139688317564320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742139688356228458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,6 +3388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6742139688419751853}
   - component: {fileID: 6742139688419751852}
+  - component: {fileID: 4095841768850583771}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -3415,6 +3481,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4095841768850583771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742139688419751854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742139688421654943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,15 +3612,19 @@ MonoBehaviour:
   cancelButton: {fileID: 4673770403298146143}
   fontSizeSlider: {fileID: 6742139689431848458}
   fontColorDropdown: {fileID: 6742139689409838504}
-  colorThemeDropdown: {fileID: 0}
-  masterVolumeSlider: {fileID: 0}
-  musicVolumeSlider: {fileID: 0}
-  soundFXVolumeSlider: {fileID: 0}
+  colorThemeDropdown: {fileID: 6742139688294334723}
+  masterVolumeSlider: {fileID: 6742139688311105771}
+  musicVolumeSlider: {fileID: 6742139688419751852}
+  soundFXVolumeSlider: {fileID: 6742139688317564326}
   fontColors:
   - {r: 0, g: 0, b: 0, a: 1}
   - {r: 0.0627451, g: 0.27058825, b: 0.043137256, a: 1}
   - {r: 0.69803923, g: 0.1137255, b: 0.11764707, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
+  colorThemes:
+  - {fileID: 11400000, guid: 06c87f8671aa14341be69c5a0f5ea3a2, type: 2}
+  - {fileID: 11400000, guid: b37eabca302d25c4a819143d8055d83d, type: 2}
+  - {fileID: 11400000, guid: 6c1af5f2e97959b43861b967e7b2a846, type: 2}
 --- !u!1 &6742139688428058565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,6 +3874,7 @@ GameObject:
   - component: {fileID: 6742139688534221428}
   - component: {fileID: 6742139688534221429}
   - component: {fileID: 6742139688534221451}
+  - component: {fileID: 8654183402670321169}
   m_Layer: 0
   m_Name: Layout
   m_TagString: Untagged
@@ -3889,6 +3972,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8654183402670321169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742139688534221431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742139688543091170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5180,6 +5275,7 @@ GameObject:
   - component: {fileID: 6742139689409838510}
   - component: {fileID: 6742139689409838511}
   - component: {fileID: 6742139689409838504}
+  - component: {fileID: 2198171501676020466}
   m_Layer: 0
   m_Name: Dropdown
   m_TagString: Untagged
@@ -5321,6 +5417,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &2198171501676020466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742139689409838506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6742139689431845364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5331,6 +5439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6742139689431848459}
   - component: {fileID: 6742139689431848458}
+  - component: {fileID: 8036513245386872811}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -5423,6 +5532,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8036513245386872811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742139689431845364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7589155642813064199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,6 +5556,7 @@ GameObject:
   - component: {fileID: 5639046069226424662}
   - component: {fileID: 6031801432855299597}
   - component: {fileID: 4673770403298146143}
+  - component: {fileID: 7543406964708321356}
   m_Layer: 0
   m_Name: CancelButton
   m_TagString: Untagged
@@ -5544,6 +5666,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7543406964708321356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589155642813064199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c45bc06c26a74392064bed4f0bb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8808971641630817928
 GameObject:
   m_ObjectHideFlags: 0

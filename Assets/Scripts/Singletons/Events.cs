@@ -10,4 +10,5 @@ public class Events
     [System.Serializable] public class EventIntegerEvent : UnityEvent<int> { }
     [System.Serializable] public class EventWeaponTypeEvent : UnityEvent<WeaponType> { }
     [System.Serializable] public class EventEnemyShipDeath : UnityEvent <Vector3>{ }
+    [System.Serializable] public class EventColorThemeChange : UnityEvent<ColorTheme_SO> { }
 }
