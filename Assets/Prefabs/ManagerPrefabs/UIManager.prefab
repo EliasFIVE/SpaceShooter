@@ -258,7 +258,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4903043346672355850}
   - component: {fileID: 4903043346672355849}
-  - component: {fileID: 4903043346672355848}
   m_Layer: 0
   m_Name: DummyCamera
   m_TagString: MainCamera
@@ -323,14 +322,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4903043346672355848
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4903043346672355959}
-  m_Enabled: 1
 --- !u!1 &4903043346795230561
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +723,7 @@ PrefabInstance:
     - target: {fileID: 7139067978942933095, guid: 42251710fe33c1d43aad1497d9fd37dd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7139067978942933095, guid: 42251710fe33c1d43aad1497d9fd37dd,
         type: 3}

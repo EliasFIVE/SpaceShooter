@@ -35,9 +35,9 @@ public class OptionsMenu : MonoBehaviour
         fontSizeSlider.value = settings.fontSizeAddition;
         colorThemeDropdown.value = colorThemes.IndexOf(settings.colorTheme);
         fontColorDropdown.value = fontColors.IndexOf(settings.fontColor);
-        //masterVolumeSlider
-        //musicVolumeSlider
-        //soundFXVolumeSlider
+        masterVolumeSlider.value = settings.masterVolume;
+        musicVolumeSlider.value = settings.musicVolume;
+        soundFXVolumeSlider.value = settings.soundFXVolume;
     }
 
     private void HandleDefaultClicked()
@@ -80,22 +80,31 @@ public class OptionsMenu : MonoBehaviour
 
     public void HandleMasterVolumeSlider(float value)
     {
-
-        //SET
-        Debug.LogWarning("Not Implemented");
+        if(value == -40)
+        {
+            SettingsController.Instance.SetUpMasterVolume(-80);
+            return;
+        }
+        SettingsController.Instance.SetUpMasterVolume(value);
     }
 
     public void HandleMusicVolumeSlider(float value)
     {
-
-        //SET
-        Debug.LogWarning("Not Implemented");
+        if (value == -40)
+        {
+            SettingsController.Instance.SetUpMusicVolume(-80);
+            return;
+        }
+        SettingsController.Instance.SetUpMusicVolume(value);
     }
 
     public void HandleSoundFXVolumeSlider(float value)
     {
-
-        //SET
-        Debug.LogWarning("Not Implemented");
+        if (value == -40)
+        {
+            SettingsController.Instance.SetUpFXVolume(-80);
+            return;
+        }
+        SettingsController.Instance.SetUpFXVolume(value);
     }
 }

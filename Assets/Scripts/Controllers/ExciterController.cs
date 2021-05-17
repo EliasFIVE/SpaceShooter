@@ -18,13 +18,7 @@ public class ExciterController : MonoBehaviour
 
     public void ShowExciter(string newText)
     {
-        Debug.Log("Excite " + newText);
-
-        if (text != null)
-            Debug.Log("textmesh OK");
-
-        if (animator != null)
-            Debug.Log("animator OK");
+        //Debug.Log("Excite " + newText);
 
         text.text = newText;
         animator.SetTrigger("Excite");

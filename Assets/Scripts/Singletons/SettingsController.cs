@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsController : Manager<SettingsController>
+public class SettingsController : Manager<SettingsController> //Rename to Manager, move to sepparate object
 {
     [Header("Set in Inspector")]
     [SerializeField] private OptionsSet_SO defaultOptionsSet;
-
+ 
     [Header("Set Dynamicaly")]
     [SerializeField] private OptionsSet_SO activeOptionsSet;
     [SerializeField] private int tempFontSizeAddition;
     [SerializeField] private Color tempFontColor;
     [SerializeField] private ColorTheme_SO tempColorTheme;
-    //Master volume
-    //MusicVolume
-    //FXVolume
+    [SerializeField] private float tempMasterVolume;
+    [SerializeField] private float tempMusicVolume;
+    [SerializeField] private float tempSoundFXVolume;
 
     private List<Text> texts;
     private Dictionary<Text, int> inittialTextSizes;
@@ -133,21 +133,32 @@ public class SettingsController : Manager<SettingsController>
         ColorThemeChange.Invoke(colorTheme);
     }
 
-    //Master volume
+    public void SetUpMasterVolume(float volume)
+    {
+        tempMasterVolume = volume;
+        SoundManager.Instance.SetMasterVolume(volume);
+    }
 
-    //MusicVolume
+    public void SetUpMusicVolume(float volume)
+    {
+        tempMusicVolume = volume;
+        SoundManager.Instance.SetMusicVolume(volume);
+    }
 
-    //FXVolume
+    public void SetUpFXVolume(float volume)
+    {
+        tempSoundFXVolume = volume;
+        SoundManager.Instance.SetFXVolume(volume);
+    }
 
     public void ApplyTempSettings()
     {
         activeOptionsSet.fontSizeAddition = tempFontSizeAddition;
         activeOptionsSet.fontColor = tempFontColor;
         activeOptionsSet.colorTheme = tempColorTheme;
-
-        //Master volume
-        //MusicVolume
-        //FXVolume
+        activeOptionsSet.masterVolume = tempMasterVolume;
+        activeOptionsSet.musicVolume = tempMusicVolume;
+        activeOptionsSet.soundFXVolume = tempSoundFXVolume;
     }
 
     public void CancelTempSettings()
@@ -155,20 +166,18 @@ public class SettingsController : Manager<SettingsController>
         SetUpFontSizes(activeOptionsSet.fontSizeAddition);
         SetUpFontColors(activeOptionsSet.fontColor);
         SetUpColorTheme(activeOptionsSet.colorTheme);
-
-        //Master volume
-        //MusicVolume
-        //FXVolume
+        SetUpMasterVolume(activeOptionsSet.masterVolume);
+        SetUpMusicVolume(activeOptionsSet.musicVolume);
+        SetUpFXVolume(activeOptionsSet.soundFXVolume);
     }
 
     public void SetDefaultSettings()
     {
         SetUpFontSizes(defaultOptionsSet.fontSizeAddition);
-        SetUpFontColors(defaultOptionsSet.colorTheme.fontColor); //Color Theme has higher priority
+        //SetUpFontColors(defaultOptionsSet.colorTheme.fontColor); //Color theme has higher priority
         SetUpColorTheme(defaultOptionsSet.colorTheme);
-
-        //Master volume
-        //MusicVolume
-        //FXVolume
+        SetUpMasterVolume(defaultOptionsSet.masterVolume);
+        SetUpMusicVolume(defaultOptionsSet.musicVolume);
+        SetUpFXVolume(defaultOptionsSet.soundFXVolume);
     }
 }

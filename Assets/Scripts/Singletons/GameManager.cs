@@ -34,7 +34,7 @@ public class GameManager : Manager<GameManager>
     [SerializeField] private string[] levelsScenesNames;
     string _currentLevelName = string.Empty;
 
-    public Events.EventGameState OnGameStateChanged;
+    [HideInInspector] public Events.EventGameState OnGameStateChanged;
 
     private void Start()
     {
@@ -142,7 +142,7 @@ public class GameManager : Manager<GameManager>
             return;
         }
 
-        Debug.Log("Load Complete.");
+        //Debug.Log("Load Complete.");
     }
 
     public void GoToMainMenu()

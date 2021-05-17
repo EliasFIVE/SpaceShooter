@@ -63,7 +63,7 @@ public class UIManager : Manager<UIManager>
     //Exciters setup
     public void ShowTextExciter(string text)
     {
-        Debug.Log("Show exciter");
+        //Debug.Log("Show exciter");
 
         textExciter.gameObject.SetActive(true);
         textExciter.ShowExciter(text);
@@ -81,19 +81,4 @@ public class UIManager : Manager<UIManager>
             optionsMenu.gameObject.SetActive(true);
         }
     }
-
-/*    public void PlayNextWave()
-    {
-        NextWave.gameObject.SetActive(true);
-    }
-
-    public void PlayGameOver()
-    {
-        GameOver.gameObject.SetActive(true);
-    }
-
-    public void PlayYouWin()
-    {
-        YouWin.gameObject.SetActive(true);
-    }*/
 }
