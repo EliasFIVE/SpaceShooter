@@ -19,6 +19,9 @@ public class PlayerController : ShipController
         ActivateFirstInactiveWeapon(stats.GetDefaultWeapon());
         //ActivateWeaponAndSetType(0, stats.GetDefaultWeapon());
         //weapons[0].SetType(stats.GetDefaultWeapon());
+
+        if (GameManager.Instance != null)
+            stats.shipDefinition.OnPlayerDeath.AddListener(GameManager.Instance.OnPlayerDeath);
     }
 
     void Update()

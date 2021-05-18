@@ -36,7 +36,7 @@ MonoBehaviour:
   isPlayer: 1
   initialWeapon: 1
   currentWeapon: 0
-  maxHealth: 500
+  maxHealth: 100
   currentHealth: 0
   maxEnergy: 100
   currentEnergy: 0

@@ -18,7 +18,7 @@ public class EnemiesManager : Singleton<EnemiesManager>
     }
     public void StartWaveByNumber(int waveIndex)
     {
-        Debug.LogFormat("New wave with {0} enemies", activeEnemies.ToString());
+        //Debug.LogFormat("New wave with {0} enemies", activeEnemies.ToString());
 
         activeWaveIndex = waveIndex;
         EnemyWave_SO activeWave = EnemyWaves[waveIndex];
@@ -67,14 +67,14 @@ public class EnemiesManager : Singleton<EnemiesManager>
 
     private void OnAllWavesComplete()
     {
-        Debug.Log("All level waves complete");
+        //Debug.Log("All level waves complete");
 
         UIManager.Instance.ShowTextExciter("Level complete");
 
-        Invoke("OnGameComplete", 2f);
+        Invoke("OnLevelComplete", 2f);
     }
 
-    private void OnGameComplete()
+    private void OnLevelComplete()
     {
         GameManager.Instance.EndGame();
     }

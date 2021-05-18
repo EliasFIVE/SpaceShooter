@@ -166,6 +166,22 @@ public class GameManager : Manager<GameManager>
 
     public void EndGame()
     {
+        //player complete the game lojic
+        UpdateState(GameState.GAMEOVER);
+    }
+
+    public void OnPlayerDeath()
+    {
+        //Debug.Log("Player death");
+
+        UIManager.Instance.ShowTextExciter("You loose");
+
+        Invoke("GameOver", 2f);
+    }
+
+    public void GameOver()
+    {
+        //player death lojic
         UpdateState(GameState.GAMEOVER);
     }
 
