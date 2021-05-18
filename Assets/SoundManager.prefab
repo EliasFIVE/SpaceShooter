@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2422603064365608104}
   - component: {fileID: 7201573135016725103}
   - component: {fileID: -623260905782627713}
+  - component: {fileID: 130124509906411016}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -46,8 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 6e20130e0a6c9bc409c8219a2fba56fb, type: 2}
-  introTrack: {fileID: 8300000, guid: 82489f15b268b7f479866c599da2298b, type: 3}
-  ingameTrack: {fileID: 8300000, guid: 82489f15b268b7f479866c599da2298b, type: 3}
 --- !u!82 &7201573135016725103
 AudioSource:
   m_ObjectHideFlags: 0
@@ -153,3 +152,17 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6746147991379102777}
   m_Enabled: 1
+--- !u!114 &130124509906411016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746147991379102777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea5da8a76449e74f8b3fd031c79de95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introTrack: {fileID: 8300000, guid: 82489f15b268b7f479866c599da2298b, type: 3}
+  ingameTrack: {fileID: 8300000, guid: 82489f15b268b7f479866c599da2298b, type: 3}
