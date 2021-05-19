@@ -43,5 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a711e22088f5c4fa377deff01cce04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 4386177490355320001, guid: 98c653c0d30497e49a5279105f71987c,
+  explosionPrefab: {fileID: 4994361419804474186, guid: be7a360570d48d4429aae0d76d4d4745,
     type: 3}
+  powerUpPrefab: {fileID: 0}
+  powerUpChance: 0
+  items: []
+  enemyDefaultPadding: 1.5
