@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a711e22088f5c4fa377deff01cce04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 4994361419804474186, guid: be7a360570d48d4429aae0d76d4d4745,
+  explosionPrefab: {fileID: 7306166554470653095, guid: 2952f4d1d92b9494db752163aaf05eb6,
     type: 3}
   powerUpPrefab: {fileID: 0}
   powerUpChance: 0
