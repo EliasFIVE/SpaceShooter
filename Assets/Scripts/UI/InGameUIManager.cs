@@ -15,7 +15,7 @@ public class InGameUIManager : MonoBehaviour
     PlayerController player;
     ShipStats_SO playerStats;
 
-    private void Start()
+    private void OnEnable()
     {
         player = (PlayerController)FindObjectOfType(typeof(PlayerController));
         if (player == null)
@@ -37,7 +37,6 @@ public class InGameUIManager : MonoBehaviour
         playerStats.OnShieldLevelChange.AddListener(OnShieldLevelChangeHandler);
         playerStats.OnWeaponTypeChange.AddListener(OnWeaponTypeChangeHandler);
     }
-
 
     #region Deal with Sats changes.
     //Separate functions to have ability to add some FX
@@ -68,17 +67,6 @@ public class InGameUIManager : MonoBehaviour
     #endregion
 
     #region Events from player ShipStat and Handlers
-   private void OnEnable()
-    {
-        if (playerStats != null)
-        {
-            playerStats.OnHealthChange.AddListener(OnHealthChangeHandler);
-            playerStats.OnEnergyChange.AddListener(OnEnergyChangeHandler);
-            playerStats.OnShieldPowerChange.AddListener(OnShieldPowerChangeHandler);
-            playerStats.OnShieldLevelChange.AddListener(OnShieldLevelChangeHandler);
-            playerStats.OnWeaponTypeChange.AddListener(OnWeaponTypeChangeHandler);
-        }
-    }
 
     private void OnDisable()
     {

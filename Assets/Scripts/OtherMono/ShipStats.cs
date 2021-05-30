@@ -12,16 +12,10 @@ public class ShipStats : MonoBehaviour
     {
         get { return speed; }
     }
-    private void Awake()
-    {
-        if (shipDefinition_Template != null)
-            shipDefinition = Instantiate(shipDefinition_Template);
 
-        speed = shipDefinition.speed;
-        shipDefinition.currentHealth = shipDefinition.maxHealth;
-        shipDefinition.currentEnergy = shipDefinition.maxEnergy;
-        shipDefinition.currentShieldPower = shipDefinition.maxShieldPower;
-        SetActiveWeapon(shipDefinition.initialWeapon);
+    private void OnEnable()
+    {
+        SetupStats(shipDefinition_Template);
     }
 
     #region StatControllers
@@ -107,6 +101,17 @@ public class ShipStats : MonoBehaviour
     }
     #endregion
 
+    public void SetupStats(ShipStats_SO template)
+    {
+        if (shipDefinition_Template != null)
+            shipDefinition = Instantiate(template);
+
+        speed = shipDefinition.speed;
+        shipDefinition.currentHealth = shipDefinition.maxHealth;
+        shipDefinition.currentEnergy = shipDefinition.maxEnergy;
+        shipDefinition.currentShieldPower = shipDefinition.maxShieldPower;
+        SetActiveWeapon(shipDefinition.initialWeapon);
+    }
     public void RechargeShield()
     {
         if (shipDefinition.currentShieldLevel != 0 && shipDefinition.currentShieldPower < shipDefinition.maxShieldPower)

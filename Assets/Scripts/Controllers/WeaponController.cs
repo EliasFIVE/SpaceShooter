@@ -91,6 +91,7 @@ public class WeaponController : MonoBehaviour
     public void Fire()
     {
         ProjectileController projectile;
+        float projectileSpeed = weaponDefinition.projectileVelocity;
         Vector3 projectileVelocity = Vector3.up * weaponDefinition.projectileVelocity;
         if (transform.up.y < 0) projectileVelocity.y = -projectileVelocity.y;        
 
@@ -98,33 +99,33 @@ public class WeaponController : MonoBehaviour
         {
             case WeaponType.blaster:
                 projectile = GetProjectileFromPool();
-                projectile.ResetProjectile(collar.transform.position, Quaternion.identity, projectileVelocity);
+                projectile.ResetProjectile(collar.transform.position, Quaternion.FromToRotation(Vector3.up, gameObject.transform.up), projectileSpeed);
                 projectile.gameObject.SetActive(true);
                 break;
 
             case WeaponType.spread:
                 projectile = GetProjectileFromPool();
-                projectile.ResetProjectile(collar.transform.position, Quaternion.identity, projectileVelocity);
+                projectile.ResetProjectile(collar.transform.position, Quaternion.FromToRotation(Vector3.up, gameObject.transform.up), projectileSpeed);
                 projectile.gameObject.SetActive(true);
 
                 projectile = GetProjectileFromPool();
-                projectile.ResetProjectile(collar.transform.position, Quaternion.AngleAxis(10, Vector3.back), projectileVelocity);
+                projectile.ResetProjectile(collar.transform.position, Quaternion.AngleAxis(10, gameObject.transform.forward), projectileSpeed);
                 projectile.gameObject.SetActive(true);
 
                 projectile = GetProjectileFromPool();
-                projectile.ResetProjectile(collar.transform.position, Quaternion.AngleAxis(-10, Vector3.back), projectileVelocity);
+                projectile.ResetProjectile(collar.transform.position, Quaternion.AngleAxis(-10, gameObject.transform.forward), projectileSpeed);
                 projectile.gameObject.SetActive(true);
                 break;
 
             case WeaponType.phaser:
                 projectile = GetProjectileFromPool();
-                projectile.ResetProjectile(collar.transform.position, Quaternion.identity, projectileVelocity);
+                projectile.ResetProjectile(collar.transform.position, Quaternion.FromToRotation(Vector3.up, gameObject.transform.up), projectileSpeed);
                 projectile.gameObject.SetActive(true);
                 break;
 
             case WeaponType.enemyGun:
                 projectile = GetProjectileFromPool();
-                projectile.ResetProjectile(collar.transform.position, Quaternion.identity, projectileVelocity);
+                projectile.ResetProjectile(collar.transform.position, Quaternion.FromToRotation(Vector3.up, gameObject.transform.up), projectileSpeed);
                 projectile.gameObject.SetActive(true);
                 break;
         }

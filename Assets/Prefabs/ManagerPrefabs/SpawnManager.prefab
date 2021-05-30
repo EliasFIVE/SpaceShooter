@@ -45,7 +45,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 7306166554470653095, guid: 2952f4d1d92b9494db752163aaf05eb6,
     type: 3}
-  powerUpPrefab: {fileID: 0}
-  powerUpChance: 0
-  items: []
+  powerUpPrefab: {fileID: 8930446411200385768, guid: 7ff439a5dab06ce41b7cb918d6b8a01f,
+    type: 3}
+  powerUpChance: 0.5
+  items:
+  - {fileID: 11400000, guid: d3542a50ae0080e4abaff9ad79008d81, type: 2}
+  - {fileID: 11400000, guid: d3542a50ae0080e4abaff9ad79008d81, type: 2}
+  - {fileID: 11400000, guid: 43fdd1fccb2694f41ac1f35cef389bd6, type: 2}
+  - {fileID: 11400000, guid: 43fdd1fccb2694f41ac1f35cef389bd6, type: 2}
+  - {fileID: 11400000, guid: bb46289c785c928478d4a139385bfbc7, type: 2}
+  - {fileID: 11400000, guid: a0628609ebefcfe4e9f2e8c9ca08021a, type: 2}
   enemyDefaultPadding: 1.5

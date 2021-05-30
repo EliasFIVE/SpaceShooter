@@ -26,10 +26,11 @@ public class ProjectileController : MonoBehaviour
     }
 
     #region Reset setup
-    public void ResetProjectile(Vector3 position, Quaternion rotation, Vector3 velocity)
+    public void ResetProjectile(Vector3 position, Quaternion rotation, float speed)
     {
         gameObject.transform.position = position;
-        rigid.velocity = velocity;
+        gameObject.transform.rotation = rotation;
+        rigid.velocity = gameObject.transform.up * speed;
 
         //Delay to trail enable necessary due to a viusal bug
         //most likely the time should be greater than the refresh rate of the camera renderer

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,20 @@ public class PlayerController : ShipController
         //weapons[0].SetType(stats.GetDefaultWeapon());
 
         if (GameManager.Instance != null)
+        {
             stats.shipDefinition.OnPlayerDeath.AddListener(GameManager.Instance.OnPlayerDeath);
+            stats.shipDefinition.OnPlayerDeath.AddListener(PlayerDeath);
+        }
+    }
+
+    private void PlayerDeath()
+    {
+        Invoke("DeactivatePlayer",0.5f);
+    }
+
+    public void DeactivatePlayer()
+    {
+        gameObject.SetActive(false);
     }
 
     void Update()
@@ -61,10 +75,5 @@ public class PlayerController : ShipController
 
         //Rotate ship when move
         transform.rotation = Quaternion.Euler(y * pitchMult, x * rollMult, 0);
-    }
-    // Not destroy object if death, but make it inactive
-    public void OnDestruction(GameObject destroyer)
-    {
-        gameObject.SetActive(false);
     }
 }

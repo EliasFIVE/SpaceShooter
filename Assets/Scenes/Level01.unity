@@ -340,6 +340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
+    - target: {fileID: 4413378909263495350, guid: a292cbbbba45fd240b365c18d96e8c8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4413378909263495351, guid: a292cbbbba45fd240b365c18d96e8c8e,
         type: 3}
       propertyPath: m_RootOrder
@@ -626,40 +631,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3478665437297587185, guid: d0d5baf307c4bb24092deae8a72b742c,
-        type: 3}
-      propertyPath: powerUpChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3478665437297587185, guid: d0d5baf307c4bb24092deae8a72b742c,
-        type: 3}
-      propertyPath: powerUpPrefab
-      value: 
-      objectReference: {fileID: 8930446411200385768, guid: 7ff439a5dab06ce41b7cb918d6b8a01f,
-        type: 3}
-    - target: {fileID: 3478665437297587185, guid: d0d5baf307c4bb24092deae8a72b742c,
-        type: 3}
-      propertyPath: items.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3478665437297587185, guid: d0d5baf307c4bb24092deae8a72b742c,
-        type: 3}
-      propertyPath: items.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: d3542a50ae0080e4abaff9ad79008d81,
-        type: 2}
-    - target: {fileID: 3478665437297587185, guid: d0d5baf307c4bb24092deae8a72b742c,
-        type: 3}
-      propertyPath: items.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 43fdd1fccb2694f41ac1f35cef389bd6,
-        type: 2}
-    - target: {fileID: 3478665437297587185, guid: d0d5baf307c4bb24092deae8a72b742c,
-        type: 3}
-      propertyPath: items.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 43fdd1fccb2694f41ac1f35cef389bd6,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d5baf307c4bb24092deae8a72b742c, type: 3}
 --- !u!4 &1208078772 stripped
