@@ -162,6 +162,9 @@ public class GameManager : Manager<GameManager>
     public void TogglePause()
     {
         UpdateState(_currentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.ToglePauseCutLP(_currentGameState == GameState.PAUSED);
     }
 
     public void EndGame()
